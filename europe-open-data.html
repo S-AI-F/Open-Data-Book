@@ -24,7 +24,7 @@
 <meta name="author" content="Saif Shabou" />
 
 
-<meta name="date" content="2020-05-20" />
+<meta name="date" content="2020-06-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,13 @@
 
 
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -145,15 +152,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="world-open-data.html"><a href="world-open-data.html"><i class="fa fa-check"></i><b>3</b> World open data</a><ul>
 <li class="chapter" data-level="3.1" data-path="world-open-data.html"><a href="world-open-data.html#sources"><i class="fa fa-check"></i><b>3.1</b> Sources</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="world-open-data.html"><a href="world-open-data.html#world-bank-open-data"><i class="fa fa-check"></i><b>3.1.1</b> World Bank Open data</a></li>
-<li class="chapter" data-level="3.1.2" data-path="world-open-data.html"><a href="world-open-data.html#world-health-organization"><i class="fa fa-check"></i><b>3.1.2</b> World Health Organization</a></li>
-<li class="chapter" data-level="3.1.3" data-path="world-open-data.html"><a href="world-open-data.html#food-and-agriculture-organization-of-the-united-nations"><i class="fa fa-check"></i><b>3.1.3</b> Food and Agriculture Organization of the United Nations</a></li>
-<li class="chapter" data-level="3.1.4" data-path="world-open-data.html"><a href="world-open-data.html#united-nations"><i class="fa fa-check"></i><b>3.1.4</b> United Nations</a></li>
+<li class="chapter" data-level="3.1.1" data-path="world-open-data.html"><a href="world-open-data.html#united-nations"><i class="fa fa-check"></i><b>3.1.1</b> United Nations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="world-open-data.html"><a href="world-open-data.html#world-bank-open-data"><i class="fa fa-check"></i><b>3.1.2</b> World Bank Open data</a></li>
+<li class="chapter" data-level="3.1.3" data-path="world-open-data.html"><a href="world-open-data.html#world-health-organization"><i class="fa fa-check"></i><b>3.1.3</b> World Health Organization</a></li>
+<li class="chapter" data-level="3.1.4" data-path="world-open-data.html"><a href="world-open-data.html#food-and-agriculture-organization-of-the-united-nations"><i class="fa fa-check"></i><b>3.1.4</b> Food and Agriculture Organization of the United Nations</a></li>
 <li class="chapter" data-level="3.1.5" data-path="world-open-data.html"><a href="world-open-data.html#the-world-resources-institute"><i class="fa fa-check"></i><b>3.1.5</b> The World Resources Institute</a></li>
-<li class="chapter" data-level="3.1.6" data-path="world-open-data.html"><a href="world-open-data.html#earth-data"><i class="fa fa-check"></i><b>3.1.6</b> Earth data</a></li>
+<li class="chapter" data-level="3.1.6" data-path="world-open-data.html"><a href="world-open-data.html#earth-observation-data"><i class="fa fa-check"></i><b>3.1.6</b> Earth Observation data</a></li>
 <li class="chapter" data-level="3.1.7" data-path="world-open-data.html"><a href="world-open-data.html#other-resources"><i class="fa fa-check"></i><b>3.1.7</b> Other resources</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="world-open-data.html"><a href="world-open-data.html#tools"><i class="fa fa-check"></i><b>3.2</b> Tools:</a></li>
+<li class="chapter" data-level="3.2" data-path="world-open-data.html"><a href="world-open-data.html#tools"><i class="fa fa-check"></i><b>3.2</b> Tools</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="world-open-data.html"><a href="world-open-data.html#extracting-world-bank-data"><i class="fa fa-check"></i><b>3.2.1</b> Extracting World Bank Data</a></li>
+<li class="chapter" data-level="3.2.2" data-path="world-open-data.html"><a href="world-open-data.html#extracting-dbnomics-data"><i class="fa fa-check"></i><b>3.2.2</b> Extracting DBnomics Data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="world-open-data.html"><a href="world-open-data.html#other-tools"><i class="fa fa-check"></i><b>3.2.3</b> Other tools</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="europe-open-data.html"><a href="europe-open-data.html"><i class="fa fa-check"></i><b>4</b> Europe Open data</a><ul>
 <li class="chapter" data-level="4.1" data-path="europe-open-data.html"><a href="europe-open-data.html#sources-1"><i class="fa fa-check"></i><b>4.1</b> Sources</a><ul>
@@ -274,21 +285,21 @@ For futher information about handling goegraphical data see:
 <li>Environment and energy</li>
 <li>Science, technology, digital society</li>
 </ul>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="kw">library</span>(kableExtra)</a>
-<a class="sourceLine" id="cb28-3" title="3"></a>
-<a class="sourceLine" id="cb28-4" title="4"><span class="co"># extract main themes</span></a>
-<a class="sourceLine" id="cb28-5" title="5">themes.values =<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">unique</span>(Eurostat.themes<span class="op">$</span>Theme.L0)) </a>
-<a class="sourceLine" id="cb28-6" title="6">themes.values =<span class="st"> </span>themes.values[themes.values <span class="op">!=</span><span class="st"> &quot;&quot;</span>]</a>
-<a class="sourceLine" id="cb28-7" title="7"><span class="co"># extract their row numbers</span></a>
-<a class="sourceLine" id="cb28-8" title="8">row.main.theme =<span class="st"> </span><span class="kw">which</span>(Eurostat.themes<span class="op">$</span>Theme.L0 <span class="op">%in%</span><span class="st"> </span>themes.values)</a>
-<a class="sourceLine" id="cb28-9" title="9"></a>
-<a class="sourceLine" id="cb28-10" title="10"><span class="co"># generate table</span></a>
-<a class="sourceLine" id="cb28-11" title="11"><span class="kw">kable</span>(Eurostat.themes) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb28-12" title="12"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
-<a class="sourceLine" id="cb28-13" title="13">                 <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb28-14" title="14"><span class="st">  </span><span class="kw">row_spec</span>(row.main.theme, <span class="dt">bold =</span> T, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">background =</span> <span class="st">&quot;#A7C4C3&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb28-15" title="15"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1"><span class="kw">library</span>(knitr)</a>
+<a class="sourceLine" id="cb71-2" title="2"><span class="kw">library</span>(kableExtra)</a>
+<a class="sourceLine" id="cb71-3" title="3"></a>
+<a class="sourceLine" id="cb71-4" title="4"><span class="co"># extract main themes</span></a>
+<a class="sourceLine" id="cb71-5" title="5">themes.values =<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">unique</span>(Eurostat.themes<span class="op">$</span>Theme.L0)) </a>
+<a class="sourceLine" id="cb71-6" title="6">themes.values =<span class="st"> </span>themes.values[themes.values <span class="op">!=</span><span class="st"> &quot;&quot;</span>]</a>
+<a class="sourceLine" id="cb71-7" title="7"><span class="co"># extract their row numbers</span></a>
+<a class="sourceLine" id="cb71-8" title="8">row.main.theme =<span class="st"> </span><span class="kw">which</span>(Eurostat.themes<span class="op">$</span>Theme.L0 <span class="op">%in%</span><span class="st"> </span>themes.values)</a>
+<a class="sourceLine" id="cb71-9" title="9"></a>
+<a class="sourceLine" id="cb71-10" title="10"><span class="co"># generate table</span></a>
+<a class="sourceLine" id="cb71-11" title="11"><span class="kw">kable</span>(Eurostat.themes) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb71-12" title="12"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
+<a class="sourceLine" id="cb71-13" title="13">                 <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb71-14" title="14"><span class="st">  </span><span class="kw">row_spec</span>(row.main.theme, <span class="dt">bold =</span> T, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">background =</span> <span class="st">&quot;#A7C4C3&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb71-15" title="15"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <thead>
@@ -2708,16 +2719,16 @@ The package homepageis: <a href="http://ropengov.github.io/eurostat/" class="uri
 <div id="finding-data" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Finding data</h3>
 <p>The function <code>get_eurostat_toc()</code> downloads a table of contents of eurostat datasets. The values in column ‘code’ should be used to download a selected dataset.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="co"># Load the package</span></a>
-<a class="sourceLine" id="cb29-2" title="2"><span class="kw">library</span>(eurostat)</a>
-<a class="sourceLine" id="cb29-3" title="3"><span class="kw">library</span>(rvest)</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1"><span class="co"># Load the package</span></a>
+<a class="sourceLine" id="cb72-2" title="2"><span class="kw">library</span>(eurostat)</a>
+<a class="sourceLine" id="cb72-3" title="3"><span class="kw">library</span>(rvest)</a></code></pre></div>
 <pre><code>## Loading required package: xml2</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="co"># Get Eurostat data listing</span></a>
-<a class="sourceLine" id="cb31-2" title="2">toc &lt;-<span class="st"> </span><span class="kw">get_eurostat_toc</span>()</a>
-<a class="sourceLine" id="cb31-3" title="3"></a>
-<a class="sourceLine" id="cb31-4" title="4"><span class="co"># Check the first items</span></a>
-<a class="sourceLine" id="cb31-5" title="5"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb31-6" title="6"><span class="kw">kable</span>(<span class="kw">head</span>(toc))</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1"><span class="co"># Get Eurostat data listing</span></a>
+<a class="sourceLine" id="cb74-2" title="2">toc &lt;-<span class="st"> </span><span class="kw">get_eurostat_toc</span>()</a>
+<a class="sourceLine" id="cb74-3" title="3"></a>
+<a class="sourceLine" id="cb74-4" title="4"><span class="co"># Check the first items</span></a>
+<a class="sourceLine" id="cb74-5" title="5"><span class="kw">library</span>(knitr)</a>
+<a class="sourceLine" id="cb74-6" title="6"><span class="kw">kable</span>(<span class="kw">head</span>(toc))</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2889,16 +2900,16 @@ ei_bsco_m
 dataset
 </td>
 <td style="text-align:left;">
-15.05.2020
+28.05.2020
 </td>
 <td style="text-align:left;">
-29.04.2020
+28.05.2020
 </td>
 <td style="text-align:left;">
 1980M01
 </td>
 <td style="text-align:left;">
-2020M04
+2020M05
 </td>
 <td style="text-align:left;">
 NA
@@ -2907,8 +2918,8 @@ NA
 </tbody>
 </table>
 <p>The function <code>search_eurostat</code> can be used to search the table of contents for specifc text pattern. For example we can search for different datsets related to <em>transport and passenger</em> theme.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="co"># info about passengers</span></a>
-<a class="sourceLine" id="cb32-2" title="2"><span class="kw">kable</span>(<span class="kw">head</span>(<span class="kw">search_eurostat</span>(<span class="st">&quot;passenger transport&quot;</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1"><span class="co"># info about passengers</span></a>
+<a class="sourceLine" id="cb75-2" title="2"><span class="kw">kable</span>(<span class="kw">head</span>(<span class="kw">search_eurostat</span>(<span class="st">&quot;passenger transport&quot;</span>)))</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3002,10 +3013,10 @@ avia_paoc
 dataset
 </td>
 <td style="text-align:left;">
-11.05.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
-10.04.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
 1993
@@ -3028,10 +3039,10 @@ avia_paoa
 dataset
 </td>
 <td style="text-align:left;">
-11.05.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
-10.04.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
 1993
@@ -3054,10 +3065,10 @@ avia_paocc
 dataset
 </td>
 <td style="text-align:left;">
-11.05.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
-10.04.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
 1993
@@ -3080,10 +3091,10 @@ avia_paoac
 dataset
 </td>
 <td style="text-align:left;">
-11.05.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
-10.04.2020
+27.05.2020
 </td>
 <td style="text-align:left;">
 1993
@@ -3107,23 +3118,23 @@ NA
 </ul>
 <p>Here an example of indicator ‘Modal split of passenger transport’. This is the percentage share of each mode of transport in total inland transport, expressed in passenger-kilometres (pkm) based on transport by passenger cars, buses and coaches, and trains. All data should be based on movements on national territory, regardless of the nationality of the vehicle. However, the data collection is not harmonized at the EU level.</p>
 <p>Pick and print the id of the data set to download:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="co"># For the original data, see</span></a>
-<a class="sourceLine" id="cb33-2" title="2"><span class="co"># http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;plugin=1&amp;language=en&amp;pcode=tsdtr210</span></a>
-<a class="sourceLine" id="cb33-3" title="3">id &lt;-<span class="st"> </span><span class="kw">search_eurostat</span>(<span class="st">&quot;Modal split of passenger transport&quot;</span>,</a>
-<a class="sourceLine" id="cb33-4" title="4">                         <span class="dt">type =</span> <span class="st">&quot;table&quot;</span>)<span class="op">$</span>code[<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb33-5" title="5"><span class="kw">print</span>(id)</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1"><span class="co"># For the original data, see</span></a>
+<a class="sourceLine" id="cb76-2" title="2"><span class="co"># http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;plugin=1&amp;language=en&amp;pcode=tsdtr210</span></a>
+<a class="sourceLine" id="cb76-3" title="3">id &lt;-<span class="st"> </span><span class="kw">search_eurostat</span>(<span class="st">&quot;Modal split of passenger transport&quot;</span>,</a>
+<a class="sourceLine" id="cb76-4" title="4">                         <span class="dt">type =</span> <span class="st">&quot;table&quot;</span>)<span class="op">$</span>code[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb76-5" title="5"><span class="kw">print</span>(id)</a></code></pre></div>
 <pre><code>## [1] &quot;t2020_rk310&quot;</code></pre>
 <p>Get the whole corresponding table. As the table is annual data, it is more convient to use a numeric time variable than use the default date format:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">dat &lt;-<span class="st"> </span><span class="kw">get_eurostat</span>(id, <span class="dt">time_format =</span> <span class="st">&quot;num&quot;</span>)</a></code></pre></div>
-<pre><code>## Table t2020_rk310 cached at C:\Users\saif\AppData\Local\Temp\Rtmp8Yaa3U/eurostat/t2020_rk310_num_code_TF.rds</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">str</span>(dat)</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1">dat &lt;-<span class="st"> </span><span class="kw">get_eurostat</span>(id, <span class="dt">time_format =</span> <span class="st">&quot;num&quot;</span>)</a></code></pre></div>
+<pre><code>## Table t2020_rk310 cached at C:\Users\saif\AppData\Local\Temp\Rtmpsddkb0/eurostat/t2020_rk310_num_code_TF.rds</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1"><span class="kw">str</span>(dat)</a></code></pre></div>
 <pre><code>## tibble [2,641 x 5] (S3: tbl_df/tbl/data.frame)
 ##  $ unit   : Factor w/ 1 level &quot;PC&quot;: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ vehicle: Factor w/ 3 levels &quot;BUS_TOT&quot;,&quot;CAR&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ geo    : Factor w/ 35 levels &quot;AT&quot;,&quot;BE&quot;,&quot;CH&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
 ##  $ time   : num [1:2641] 1990 1990 1990 1990 1990 1990 1990 1990 1990 1990 ...
 ##  $ values : num [1:2641] 11 10.6 3.7 9.1 11.3 32.4 14.9 13.5 6 24.8 ...</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">kable</span>(<span class="kw">head</span>(dat))</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1"><span class="kw">kable</span>(<span class="kw">head</span>(dat))</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3250,8 +3261,8 @@ EL
 </tbody>
 </table>
 <p>Or you can get only a part of the dataset by defining <code>filters</code> argument. It should be named list, where names corresponds to variable names (lower case) and values are vectors of codes corresponding desidered series (upper case). For time variable, in addition to a <code>time</code>, also a <code>sinceTimePeriod</code> and a <code>lastTimePeriod</code> can be used.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">dat2 &lt;-<span class="st"> </span><span class="kw">get_eurostat</span>(id, <span class="dt">filters =</span> <span class="kw">list</span>(<span class="dt">geo =</span> <span class="kw">c</span>(<span class="st">&quot;EU28&quot;</span>, <span class="st">&quot;FI&quot;</span>), <span class="dt">lastTimePeriod=</span><span class="dv">1</span>), <span class="dt">time_format =</span> <span class="st">&quot;num&quot;</span>)</a>
-<a class="sourceLine" id="cb40-2" title="2"><span class="kw">kable</span>(dat2)</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1">dat2 &lt;-<span class="st"> </span><span class="kw">get_eurostat</span>(id, <span class="dt">filters =</span> <span class="kw">list</span>(<span class="dt">geo =</span> <span class="kw">c</span>(<span class="st">&quot;EU28&quot;</span>, <span class="st">&quot;FI&quot;</span>), <span class="dt">lastTimePeriod=</span><span class="dv">1</span>), <span class="dt">time_format =</span> <span class="st">&quot;num&quot;</span>)</a>
+<a class="sourceLine" id="cb83-2" title="2"><span class="kw">kable</span>(dat2)</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3381,10 +3392,10 @@ FI
 <div id="replacing-codes-with-labels" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> replacing codes with labels</h3>
 <p>By default variables are returned as Eurostat codes, but to get human-readable labels instead, use a <code>type = "label"</code> argument.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1">datl2 &lt;-<span class="st"> </span><span class="kw">get_eurostat</span>(id, <span class="dt">filters =</span> <span class="kw">list</span>(<span class="dt">geo =</span> <span class="kw">c</span>(<span class="st">&quot;EU28&quot;</span>, <span class="st">&quot;FI&quot;</span>),</a>
-<a class="sourceLine" id="cb41-2" title="2">                                         <span class="dt">lastTimePeriod =</span> <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb41-3" title="3">                      <span class="dt">type =</span> <span class="st">&quot;label&quot;</span>, <span class="dt">time_format =</span> <span class="st">&quot;num&quot;</span>)</a>
-<a class="sourceLine" id="cb41-4" title="4"><span class="kw">kable</span>(<span class="kw">head</span>(datl2))</a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1">datl2 &lt;-<span class="st"> </span><span class="kw">get_eurostat</span>(id, <span class="dt">filters =</span> <span class="kw">list</span>(<span class="dt">geo =</span> <span class="kw">c</span>(<span class="st">&quot;EU28&quot;</span>, <span class="st">&quot;FI&quot;</span>),</a>
+<a class="sourceLine" id="cb84-2" title="2">                                         <span class="dt">lastTimePeriod =</span> <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb84-3" title="3">                      <span class="dt">type =</span> <span class="st">&quot;label&quot;</span>, <span class="dt">time_format =</span> <span class="st">&quot;num&quot;</span>)</a>
+<a class="sourceLine" id="cb84-4" title="4"><span class="kw">kable</span>(<span class="kw">head</span>(datl2))</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3511,8 +3522,8 @@ Finland
 </tbody>
 </table>
 <p>Eurostat codes in the downloaded data set can be replaced with human-readable labels from the Eurostat dictionaries with the <code>label_eurostat()</code> function</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">datl &lt;-<span class="st"> </span><span class="kw">label_eurostat</span>(dat)</a>
-<a class="sourceLine" id="cb42-2" title="2"><span class="kw">kable</span>(<span class="kw">head</span>(datl))</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1">datl &lt;-<span class="st"> </span><span class="kw">label_eurostat</span>(dat)</a>
+<a class="sourceLine" id="cb85-2" title="2"><span class="kw">kable</span>(<span class="kw">head</span>(datl))</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3639,11 +3650,9 @@ Greece
 </tbody>
 </table>
 <p>The <code>label_eurostat()</code> allows conversion of individual variable vectors or variable names as well.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">label_eurostat_vars</span>(<span class="kw">names</span>(datl))</a></code></pre></div>
-<pre><code>## [1] &quot;Unit of measure&quot;                                                                     
-## [2] &quot;Vehicles&quot;                                                                            
-## [3] &quot;Geopolitical entity (reporting)&quot;                                                     
-## [4] &quot;Period of time (a=annual, q=quarterly, m=monthly, d=daily, c=cumulated from January)&quot;</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1"><span class="kw">label_eurostat_vars</span>(<span class="kw">names</span>(datl))</a></code></pre></div>
+<pre><code>## [1] &quot;Unit of measure&quot;                 &quot;Vehicles&quot;                       
+## [3] &quot;Geopolitical entity (reporting)&quot; &quot;Period of time&quot;</code></pre>
 </div>
 </div>
 <div id="analysis" class="section level2">
@@ -3654,19 +3663,19 @@ Greece
 <div id="ferility-rate" class="section level4">
 <h4><span class="header-section-number">4.4.1.1</span> Ferility rate</h4>
 <p>Tis indicator is defined as the mean number of children that would be born alive to a woman during her lifetime if she were to survive and pass through her childbearing years conforming to the fertility rates by age of a given year.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="co"># get data</span></a>
-<a class="sourceLine" id="cb45-2" title="2">tps00199_data &lt;-<span class="st"> </span>eurostat<span class="op">::</span><span class="kw">get_eurostat</span>(<span class="st">&quot;tps00199&quot;</span>,</a>
-<a class="sourceLine" id="cb45-3" title="3">                                        <span class="dt">time_format =</span> <span class="st">&quot;date&quot;</span>,</a>
-<a class="sourceLine" id="cb45-4" title="4">                                        <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>,</a>
-<a class="sourceLine" id="cb45-5" title="5">                                        <span class="dt">type =</span> <span class="st">&quot;label&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb45-6" title="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(geo,time,values) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb45-7" title="7"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">fertility_rate =</span> values) </a>
-<a class="sourceLine" id="cb45-8" title="8"></a>
-<a class="sourceLine" id="cb45-9" title="9"><span class="co"># plot data</span></a>
-<a class="sourceLine" id="cb45-10" title="10"><span class="kw">kable</span>(tps00199_data) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb45-11" title="11"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
-<a class="sourceLine" id="cb45-12" title="12">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb45-13" title="13"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" title="1"><span class="co"># get data</span></a>
+<a class="sourceLine" id="cb88-2" title="2">tps00199_data &lt;-<span class="st"> </span>eurostat<span class="op">::</span><span class="kw">get_eurostat</span>(<span class="st">&quot;tps00199&quot;</span>,</a>
+<a class="sourceLine" id="cb88-3" title="3">                                        <span class="dt">time_format =</span> <span class="st">&quot;date&quot;</span>,</a>
+<a class="sourceLine" id="cb88-4" title="4">                                        <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb88-5" title="5">                                        <span class="dt">type =</span> <span class="st">&quot;label&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb88-6" title="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(geo,time,values) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb88-7" title="7"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">fertility_rate =</span> values) </a>
+<a class="sourceLine" id="cb88-8" title="8"></a>
+<a class="sourceLine" id="cb88-9" title="9"><span class="co"># plot data</span></a>
+<a class="sourceLine" id="cb88-10" title="10"><span class="kw">kable</span>(tps00199_data) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb88-11" title="11"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
+<a class="sourceLine" id="cb88-12" title="12">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb88-13" title="13"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <thead>
@@ -10012,17 +10021,17 @@ United Kingdom
 </table>
 </div>
 <p>Let’s plot the evolution of this indicator for the different european countries:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb46-2" title="2"><span class="kw">library</span>(tidyr)</a>
-<a class="sourceLine" id="cb46-3" title="3"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb46-4" title="4"></a>
-<a class="sourceLine" id="cb46-5" title="5"><span class="kw">ggplot</span>(tps00199_data, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> fertility_rate, <span class="dt">label =</span> geo, <span class="dt">color =</span> geo)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb46-6" title="6"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb46-7" title="7"><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> tps00199_data <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">group_by</span>(geo) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb46-8" title="8"><span class="st">              </span><span class="kw">filter</span>(time <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(time)), <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb46-9" title="9"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Fertility rate by coutry&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Fertility rate&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb46-10" title="10"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</a></code></pre></div>
-<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb89-2" title="2"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb89-3" title="3"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb89-4" title="4"></a>
+<a class="sourceLine" id="cb89-5" title="5"><span class="kw">ggplot</span>(tps00199_data, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> fertility_rate, <span class="dt">label =</span> geo, <span class="dt">color =</span> geo)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb89-6" title="6"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb89-7" title="7"><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> tps00199_data <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">group_by</span>(geo) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb89-8" title="8"><span class="st">              </span><span class="kw">filter</span>(time <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(time)), <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb89-9" title="9"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Fertility rate by coutry&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Fertility rate&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb89-10" title="10"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 </div>
 </div>
 <div id="environment" class="section level3">
@@ -10030,20 +10039,20 @@ United Kingdom
 <div id="greenhouse-gas-emissions-source-eea" class="section level4">
 <h4><span class="header-section-number">4.4.2.1</span> Greenhouse gas emissions (source: EEA)</h4>
 <p>The indicator measures total national emissions (from both ESD and ETS sectors) including international aviation of the so called ‘Kyoto basket’ of greenhouse gases, including carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and the so-called F-gases (hydrofluorocarbons, perfluorocarbons, nitrogen triflouride (NF3) and sulphur hexafluoride (SF6)) from all sectors of the GHG emission inventories (including international aviation, excluding land use, land use change and forestry (LULUCF)). Using each gas’ individual global warming potential (GWP), they are being integrated into a single indicator expressed in units of CO2 equivalents. The GHG emission inventories are submitted annually by the EU Member States to the United Nations Framework Convention on Climate Change (UNFCCC).</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="co"># get data</span></a>
-<a class="sourceLine" id="cb47-2" title="2">sdg_<span class="dv">13</span>_<span class="dv">10</span>_data &lt;-<span class="st"> </span>eurostat<span class="op">::</span><span class="kw">get_eurostat</span>(<span class="st">&quot;sdg_13_10&quot;</span>,</a>
-<a class="sourceLine" id="cb47-3" title="3">                                        <span class="dt">time_format =</span> <span class="st">&quot;date&quot;</span>,</a>
-<a class="sourceLine" id="cb47-4" title="4">                                        <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>,</a>
-<a class="sourceLine" id="cb47-5" title="5">                                        <span class="dt">filters =</span> <span class="kw">list</span>(<span class="dt">indic_env =</span> <span class="st">&quot;GHG_T_HAB&quot;</span>))</a>
-<a class="sourceLine" id="cb47-6" title="6"></a>
-<a class="sourceLine" id="cb47-7" title="7"><span class="co"># filter one year</span></a>
-<a class="sourceLine" id="cb47-8" title="8">sdg_<span class="dv">13</span>_<span class="dv">10</span>_data_<span class="dv">2017</span> =<span class="st"> </span>sdg_<span class="dv">13</span>_<span class="dv">10</span>_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(time <span class="op">==</span><span class="st"> &quot;2017-01-01&quot;</span>)</a>
-<a class="sourceLine" id="cb47-9" title="9"></a>
-<a class="sourceLine" id="cb47-10" title="10"><span class="co"># plot table</span></a>
-<a class="sourceLine" id="cb47-11" title="11"><span class="kw">kable</span>(sdg_<span class="dv">13</span>_<span class="dv">10</span>_data_<span class="dv">2017</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb47-12" title="12"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
-<a class="sourceLine" id="cb47-13" title="13">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb47-14" title="14"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1"><span class="co"># get data</span></a>
+<a class="sourceLine" id="cb90-2" title="2">sdg_<span class="dv">13</span>_<span class="dv">10</span>_data &lt;-<span class="st"> </span>eurostat<span class="op">::</span><span class="kw">get_eurostat</span>(<span class="st">&quot;sdg_13_10&quot;</span>,</a>
+<a class="sourceLine" id="cb90-3" title="3">                                        <span class="dt">time_format =</span> <span class="st">&quot;date&quot;</span>,</a>
+<a class="sourceLine" id="cb90-4" title="4">                                        <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb90-5" title="5">                                        <span class="dt">filters =</span> <span class="kw">list</span>(<span class="dt">indic_env =</span> <span class="st">&quot;GHG_T_HAB&quot;</span>))</a>
+<a class="sourceLine" id="cb90-6" title="6"></a>
+<a class="sourceLine" id="cb90-7" title="7"><span class="co"># filter one year</span></a>
+<a class="sourceLine" id="cb90-8" title="8">sdg_<span class="dv">13</span>_<span class="dv">10</span>_data_<span class="dv">2017</span> =<span class="st"> </span>sdg_<span class="dv">13</span>_<span class="dv">10</span>_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(time <span class="op">==</span><span class="st"> &quot;2017-01-01&quot;</span>)</a>
+<a class="sourceLine" id="cb90-9" title="9"></a>
+<a class="sourceLine" id="cb90-10" title="10"><span class="co"># plot table</span></a>
+<a class="sourceLine" id="cb90-11" title="11"><span class="kw">kable</span>(sdg_<span class="dv">13</span>_<span class="dv">10</span>_data_<span class="dv">2017</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb90-12" title="12"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
+<a class="sourceLine" id="cb90-13" title="13">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb90-14" title="14"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <thead>
@@ -10556,12 +10565,12 @@ UK
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="co"># plot emission in 2017</span></a>
-<a class="sourceLine" id="cb48-2" title="2"><span class="kw">ggplot</span>(sdg_<span class="dv">13</span>_<span class="dv">10</span>_data_<span class="dv">2017</span>, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">reorder</span>(geo, values), <span class="dt">y =</span> values)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb48-3" title="3"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;gray&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb48-4" title="4"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">6</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb48-5" title="5"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Greenhouse gas emission - tonnes per capita (2017)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Greenhouse gas emission - tonnes per capita&quot;</span>, <span class="dt">x =</span> <span class="ot">NULL</span>)</a></code></pre></div>
-<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" title="1"><span class="co"># plot emission in 2017</span></a>
+<a class="sourceLine" id="cb91-2" title="2"><span class="kw">ggplot</span>(sdg_<span class="dv">13</span>_<span class="dv">10</span>_data_<span class="dv">2017</span>, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">reorder</span>(geo, values), <span class="dt">y =</span> values)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb91-3" title="3"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;gray&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb91-4" title="4"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">6</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb91-5" title="5"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Greenhouse gas emission - tonnes per capita (2017)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Greenhouse gas emission - tonnes per capita&quot;</span>, <span class="dt">x =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 
 </div>
 </div>

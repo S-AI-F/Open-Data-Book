@@ -24,7 +24,7 @@
 <meta name="author" content="Saif Shabou" />
 
 
-<meta name="date" content="2020-05-20" />
+<meta name="date" content="2020-06-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,13 @@
 
 
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -145,15 +152,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="world-open-data.html"><a href="world-open-data.html"><i class="fa fa-check"></i><b>3</b> World open data</a><ul>
 <li class="chapter" data-level="3.1" data-path="world-open-data.html"><a href="world-open-data.html#sources"><i class="fa fa-check"></i><b>3.1</b> Sources</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="world-open-data.html"><a href="world-open-data.html#world-bank-open-data"><i class="fa fa-check"></i><b>3.1.1</b> World Bank Open data</a></li>
-<li class="chapter" data-level="3.1.2" data-path="world-open-data.html"><a href="world-open-data.html#world-health-organization"><i class="fa fa-check"></i><b>3.1.2</b> World Health Organization</a></li>
-<li class="chapter" data-level="3.1.3" data-path="world-open-data.html"><a href="world-open-data.html#food-and-agriculture-organization-of-the-united-nations"><i class="fa fa-check"></i><b>3.1.3</b> Food and Agriculture Organization of the United Nations</a></li>
-<li class="chapter" data-level="3.1.4" data-path="world-open-data.html"><a href="world-open-data.html#united-nations"><i class="fa fa-check"></i><b>3.1.4</b> United Nations</a></li>
+<li class="chapter" data-level="3.1.1" data-path="world-open-data.html"><a href="world-open-data.html#united-nations"><i class="fa fa-check"></i><b>3.1.1</b> United Nations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="world-open-data.html"><a href="world-open-data.html#world-bank-open-data"><i class="fa fa-check"></i><b>3.1.2</b> World Bank Open data</a></li>
+<li class="chapter" data-level="3.1.3" data-path="world-open-data.html"><a href="world-open-data.html#world-health-organization"><i class="fa fa-check"></i><b>3.1.3</b> World Health Organization</a></li>
+<li class="chapter" data-level="3.1.4" data-path="world-open-data.html"><a href="world-open-data.html#food-and-agriculture-organization-of-the-united-nations"><i class="fa fa-check"></i><b>3.1.4</b> Food and Agriculture Organization of the United Nations</a></li>
 <li class="chapter" data-level="3.1.5" data-path="world-open-data.html"><a href="world-open-data.html#the-world-resources-institute"><i class="fa fa-check"></i><b>3.1.5</b> The World Resources Institute</a></li>
-<li class="chapter" data-level="3.1.6" data-path="world-open-data.html"><a href="world-open-data.html#earth-data"><i class="fa fa-check"></i><b>3.1.6</b> Earth data</a></li>
+<li class="chapter" data-level="3.1.6" data-path="world-open-data.html"><a href="world-open-data.html#earth-observation-data"><i class="fa fa-check"></i><b>3.1.6</b> Earth Observation data</a></li>
 <li class="chapter" data-level="3.1.7" data-path="world-open-data.html"><a href="world-open-data.html#other-resources"><i class="fa fa-check"></i><b>3.1.7</b> Other resources</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="world-open-data.html"><a href="world-open-data.html#tools"><i class="fa fa-check"></i><b>3.2</b> Tools:</a></li>
+<li class="chapter" data-level="3.2" data-path="world-open-data.html"><a href="world-open-data.html#tools"><i class="fa fa-check"></i><b>3.2</b> Tools</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="world-open-data.html"><a href="world-open-data.html#extracting-world-bank-data"><i class="fa fa-check"></i><b>3.2.1</b> Extracting World Bank Data</a></li>
+<li class="chapter" data-level="3.2.2" data-path="world-open-data.html"><a href="world-open-data.html#extracting-dbnomics-data"><i class="fa fa-check"></i><b>3.2.2</b> Extracting DBnomics Data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="world-open-data.html"><a href="world-open-data.html#other-tools"><i class="fa fa-check"></i><b>3.2.3</b> Other tools</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="europe-open-data.html"><a href="europe-open-data.html"><i class="fa fa-check"></i><b>4</b> Europe Open data</a><ul>
 <li class="chapter" data-level="4.1" data-path="europe-open-data.html"><a href="europe-open-data.html#sources-1"><i class="fa fa-check"></i><b>4.1</b> Sources</a><ul>
@@ -202,19 +213,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="world-open-data" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> World open data</h1>
+<p>Several inter-governmenatal organizations have statisics divisions working in dissiminating global statistical information and maintaining open data plateforms. The main inter-governmental organization working in promoting open data is the united nations. It includes various specialized agencies such as the World Bank Group, the World Health Organization, the World Food Program, UNESCO… This chapter presents an overview of data produced and published by these organization and lists various sources of open data within different thematics.</p>
 <div id="sources" class="section level2">
 <h2><span class="header-section-number">3.1</span> Sources</h2>
-<div id="world-bank-open-data" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> World Bank Open data</h3>
-<p>The World Bank collects and processes large amounts of data. These data have been made available to the public with different services and platforms.</p>
+<div id="united-nations" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> United Nations</h3>
+<p>The United Nations (UN) is an intergovernmental organization that aims to maintain international peace and security, develop friendly relations among nations, achieve international cooperation, and harmonize their actions. The UN system includes a multitude of specialized agencies, such as the World Bank Group, the World Health Organization, the World Food Programme, UNESCO, and UNICEF. The United Nations Statistics Division is committed to the advancement of the global statistical system. They compile and dissiminate global statistical information, develop standards and norms for statistical activities, and support countries’ efforts to strengthen their national statistical systems.</p>
 <ul>
-<li><p><a href="https://datacatalog.worldbank.org/">Open Data Catalog</a>: It is a listing of available World Bank datasets that we can browe by data type (Time Series, Microdata, and geospatial data) or by countries/regions.</p>
+<li><p><strong>UN Comtrade Database</strong>: <a href="https://comtrade.un.org/">UN COMTRADE</a> is the pseudonym for United Nations International Trade Statistics Database. It contains well over 3 billion data records since 1962 and is available publicly on the internet. In addition, it offers public and premium data API for easier integration/download. Time series of data for reporter countries starts as far back as 1962 and goes up to the most recent completed year. Current data is published annually in the International Trade Statistics Yearbook.</p></li>
+<li><p><strong>UNdata</strong>: <a href="http://data.un.org/">UNdata</a> is a web-based data service providing access to a variety of statistical resources compiled by the United Nations (UN) statistical system and other international agencies. Th UNdata contains 22 databases presenting various topics. Here is a sample of published databases:</p>
+<ul>
+<li>Energy statistics Database</li>
+<li>Environment Statistics Database</li>
+<li>Industrial Commodity Statistics Database</li>
+<li>International Financial Statistics</li>
+<li>World Tourism Data
+These data are produced from more than 20 international statistical sources compiled by the UN statistical system and other international agencies: <em>Food and Agriculture Organization, International Labour Organization, International Monetary Fund, The World Bank, UNESCO Institute for Statistics, United Nations Children’s Fund, World Meteorological Organization, World Tourism Organization…</em></li>
+</ul></li>
+<li><p><strong>The UNESCO Institute for Statistics</strong>: The UNESCO Institute for Statistics (UIS) is the official and trusted source of internationally-comparable data on education, science, culture and communication. The <a href="http://data.uis.unesco.org/?lang=fr">UIS</a> provides free access to data for all UNESCO countries and regional groupings from 1970 to the most recent year available. Databases are accessible via: data rowser, bulk data download service and API. Data is organized in different themes: Education (out-of-school childre, literacy, financial resources in education…), SDG 4 (sustaiable development goal indicators), equity, science and innovation, culture (culture employement, feature films, international trade in cultural goods…), communication and information, demographic and socio-economic.</p></li>
+<li><p><strong>Sustainable Development Goals</strong>: The Sustainable Development Goals (SDGs) are a collection of 17 global goals designed to be a “blueprint to achieve a better and more sustainable future for all”. The SDGs, set in 2015 by the United Nations General Assembly and intended to be achieved by the year 2030.</p></li>
+</ul>
+<div class="figure">
+<img src="data/SDG.png" alt="SDG indicators" />
+<p class="caption">SDG indicators</p>
+</div>
+<p>The Sustainable Development Goals are: <em>No Poverty, Zero Hunger, Good Health and Well-being, Quality Education, Gender Equality, Clean Water and Sanitation, Affordable and Clean Energy, Decent Work and Economic Growth, Industry, Innovation, and Infrastructure, Reducing Inequality, Sustainable Cities and Communities, Responsible Consumption and Production, Climate Action, Life Below Water, Life On Land, Peace, Justice, and Strong Institutions, and Partnerships for the Goals</em>.</p>
+<p>The United Nations provide <a href="https://unstats.un.org/sdgs/indicators/database/">platform of the Global SDG Indicators Database</a>. This platform provides access to data compiled through the UN System in preparation for the Secretary-General’s annual report on “Progress towards the Sustainable Development Goals”.</p>
+<p>We can also explore these indicators by the mean of <a href="https://sdg-tracker.org/">SDG Tracker</a>: a free, open-access resource where users can track and explore global and country-level progress towards each of the 17 Sustainable Development Goals through interactive data visualizations.</p>
+<div class="figure">
+<img src="data/Map_Sustainable_Development_Goals_2019.jpg" alt="Sustainable Development Report Dashboards 2019" />
+<p class="caption">Sustainable Development Report Dashboards 2019</p>
+</div>
+</div>
+<div id="world-bank-open-data" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> World Bank Open data</h3>
+<p>The World Bank Group is the largest development bank in the world and it is an observer at he United Nations Development Group. The World Bank collects and processes large amounts of data. These data have been made available to the public with different services and platforms.</p>
+<ul>
+<li><p><a href="https://datacatalog.worldbank.org/">Open Data Catalog</a>: It is a listing of available World Bank datasets that we can browse by data type (Time Series, Microdata, and geospatial data) or by countries/regions.</p>
 <ul>
 <li>Time Series data: Datasets and Indicators level data that is a sequence of numbers collected at regular intervals over a period of time <em>(Examples: Unemployement rate, labor force, urban population…)</em></li>
 <li>Microdata: Unit-level data obtained from sample surveys, censuses, and administrative systems <em>(Examples: Employment And Welfare Survey, Demographic And Health Survey… )</em></li>
 <li>Geospatial: Data that has explicit geographic positioning information in vector or raster format <em>(Examples: World - Terrain Elevation Above Sea Level, World Subnational Boundaries, World - Photovoltaic Power Potential…)</em></li>
 </ul></li>
-<li><p><a href="http://datatopics.worldbank.org/world-development-indicators/">World Development Indicators</a>: The World Development Indicators is a compilation of relevant, high-quality, and internationally comparable statistcs about global development and the fight against poverty. The database contains 1600 time series indicators for 217 economies and more than 40 country groups, with data for many indicators going back more than 50 years. Data is accessible by querying online th database using DataBank tool, by API or bulk donloads. The different datasets are categorized witin six themes: poverty and inequality, people, environment, eonomy, states and markets and global links. The following tables list some featured indicators provided in these themes.</p>
+<li><p><a href="http://datatopics.worldbank.org/world-development-indicators/">World Development Indicators</a>: The World Development Indicators is a compilation of relevant, high-quality, and internationally comparable statistcs about global development and the fight against poverty. The database contains 1600 time series indicators for 217 economies and more than 40 country groups, with data for many indicators going back more than 50 years. Data is accessible by querying online th database using DataBank tool, by API or bulk downloads. The different datasets are categorized witin six themes: poverty and inequality, people, environment, eonomy, states and markets and global links. The following tables list some featured indicators provided in these themes.</p>
 <ul>
 <li><strong>Poverty and shared prosperity:</strong> It presents indicators that measure progress toward the World Bank Group’s twin goals of ending extreme poverty by 2030 and promoting shared prosperity in every country in a sustainable manner.</li>
 </ul></li>
@@ -551,7 +592,7 @@ Dividing female labor force participation rate by male labor force participation
 </table>
 </div>
 <ul>
-<li><strong>Environment:</strong> It shows how the state of the planet, as well as our use of natural resources, and the observed impacts.</li>
+<li><strong>Environment:</strong> It shows how the state of the planet, as well as our use of natural resources, and the observed impacts. It contains indicators about agriculture, climate, energy use, water ressources…</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">kable</span>(WDI_Environment[,<span class="op">-</span><span class="dv">1</span>]) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
@@ -1152,36 +1193,20 @@ The net total migrants
 </table>
 </div>
 <ul>
-<li><p><a href="https://databank.worldbank.org/home.aspx">DataBank</a>: DataBank is an analysis and visualisation tool that contains collections of time series data on a variety of topics. You can create your own queries; generate tables, charts, and maps; and easily save, embed, and share them.</p></li>
+<li><p><a href="https://databank.worldbank.org/home.aspx">DataBank</a>: DataBank is an analysis and visualisation tool that contains collections of time series data on a variety of topics. With this tool, we can create our own queries, generate tables, charts, and maps, and easily save, embed, and share them.</p></li>
 <li><p><a href="https://finances.worldbank.org/">Open finances</a>: Open Finances makes World Bank Group’s financials available for everybody to explore. They are orgnaized within different categories: loans and credits, financial reporting, shareholder equity, procurement, projects, budget…</p></li>
 <li><p><a href="http://datatopics.worldbank.org/consumption/">Global Consumption Database</a>: The Global Consumption Database is a one-stop source of data on household consumption patterns in developing countries. It is designed to serve a wide range of users—from researchers seeking data for analytical studies to businesses seeking a better understanding of the markets into which they are expanding or those they are already serving.</p></li>
 <li><p><a href="https://microdata.worldbank.org/index.php/home">Microdata library</a>: Provides acces to data collected through sample surveys of households, business establishments or other facilities.</p></li>
 </ul>
 </div>
 <div id="world-health-organization" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> World Health Organization</h3>
+<h3><span class="header-section-number">3.1.3</span> World Health Organization</h3>
 <p><a href="https://www.who.int/data/gho">The Global Health Observatory data repository</a> is an initiative of the World Health Organization to share data (through their website) on global health, including statistics by country and information about specific diseases and health measures. It provides access to over 1000 indicators on priority health topics including mortality and burden of diseases, the Millennium Development Goals (child nutrition, child health, maternal and reproductive health, immunization, HIV/AIDS, tuberculosis, malaria, neglected diseases, water and sanitation), non communicable diseases and risk factors, epidemic-prone diseases, health systems, environmental health, violence and injuries, equity among others.</p>
 <p>We can use th <code>WHO</code> R package to collect the Global Health Observatory data.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">library</span>(WHO)</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw">library</span>(dplyr)</a></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:kableExtra&#39;:
-## 
-##     group_rows</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">codes &lt;-<span class="st"> </span><span class="kw">get_codes</span>()</a></code></pre></div>
-<pre><code>## Warning: `as_data_frame()` is deprecated as of tibble 2.0.0.
-## Please use `as_tibble()` instead.
-## The signature and semantics have changed, see `?as_tibble`.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">head</span>(codes)</a></code></pre></div>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb7-3" title="3">codes &lt;-<span class="st"> </span><span class="kw">get_codes</span>()</a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="kw">head</span>(codes)</a></code></pre></div>
 <pre><code>## # A tibble: 6 x 3
 ##   label     display                             url                             
 ##   &lt;chr&gt;     &lt;chr&gt;                               &lt;chr&gt;                           
@@ -1192,8 +1217,8 @@ The net total migrants
 ## 5 MDG_0000~ Under-five mortality rate (probabi~ https://www.who.int/data/gho/in~
 ## 6 MDG_0000~ Median availability of selected ge~ https://www.who.int/data/gho/in~</code></pre>
 <p>To find datasets based on specific thematics w can use regular expresssions for searching in existing datasets.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="co"># searching for datasets related to &quot;life expectancy&quot;</span></a>
-<a class="sourceLine" id="cb16-2" title="2">codes[<span class="kw">grepl</span>(<span class="st">&quot;[Ll]ife expectancy&quot;</span>, codes<span class="op">$</span>display), ]</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># searching for datasets related to &quot;life expectancy&quot;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">codes[<span class="kw">grepl</span>(<span class="st">&quot;[Ll]ife expectancy&quot;</span>, codes<span class="op">$</span>display), ]</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##   label      display                     url                                    
 ##   &lt;chr&gt;      &lt;chr&gt;                       &lt;chr&gt;                                  
@@ -1202,39 +1227,39 @@ The net total migrants
 ## 3 WHOSIS_00~ Life expectancy at age 60 ~ https://www.who.int/data/gho/indicator~
 ## 4 WHOSIS_00~ Healthy life expectancy (H~ https://www.who.int/data/gho/indicator~</code></pre>
 <p>Once, we identify a dataset code we can collect the data using <code>get_data</code> command.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="co"># get Life expectancy at birth data</span></a>
-<a class="sourceLine" id="cb18-2" title="2">df &lt;-<span class="st"> </span><span class="kw">get_data</span>(<span class="st">&quot;WHOSIS_000001&quot;</span>)</a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># get Life expectancy at birth data</span></a>
+<a class="sourceLine" id="cb11-2" title="2">df &lt;-<span class="st"> </span><span class="kw">get_data</span>(<span class="st">&quot;WHOSIS_000001&quot;</span>)</a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
 <pre><code>## # A tibble: 6 x 7
-##   country sex        region gho                          year publishstate value
-##   &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;                       &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;
-## 1 Rwanda  Male       Africa Life expectancy at birth (~  2001 Published     43.5
-## 2 Rwanda  Female     Africa Life expectancy at birth (~  2001 Published     49.5
-## 3 Rwanda  Both sexes Africa Life expectancy at birth (~  2003 Published     50.2
-## 4 Rwanda  Male       Africa Life expectancy at birth (~  2004 Published     49  
-## 5 Rwanda  Both sexes Africa Life expectancy at birth (~  2006 Published     56.7
-## 6 Rwanda  Male       Africa Life expectancy at birth (~  2007 Published     55.2</code></pre>
+##    year gho                          country sex       region publishstate value
+##   &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;
+## 1  2001 Life expectancy at birth (y~ Rwanda  Both sex~ Africa Published     46.5
+## 2  2002 Life expectancy at birth (y~ Rwanda  Male      Africa Published     46  
+## 3  2004 Life expectancy at birth (y~ Rwanda  Female    Africa Published     54.6
+## 4  2004 Life expectancy at birth (y~ Rwanda  Both sex~ Africa Published     51.9
+## 5  2005 Life expectancy at birth (y~ Rwanda  Male      Africa Published     51  
+## 6  2007 Life expectancy at birth (y~ Rwanda  Female    Africa Published     62.2</code></pre>
 <p>Now, we can plot the evolution of average life expectancy by region.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb20-2" title="2">df <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;Both sexes&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(region, year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">value =</span> <span class="kw">mean</span>(value)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb20-6" title="6"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> value, <span class="dt">color =</span> region, <span class="dt">linetype =</span> region)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-8" title="8"><span class="st">  </span><span class="kw">theme_light</span>(<span class="dv">9</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-9" title="9"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy at birth (years)</span><span class="ch">\n</span><span class="st">&quot;</span>, </a>
-<a class="sourceLine" id="cb20-10" title="10">       <span class="dt">linetype =</span> <span class="ot">NULL</span>, <span class="dt">color =</span> <span class="ot">NULL</span>,</a>
-<a class="sourceLine" id="cb20-11" title="11">       <span class="dt">title =</span> <span class="st">&quot;Evolution of life expectancy (by region)</span><span class="ch">\n</span><span class="st">&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb13-2" title="2">df <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;Both sexes&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(region, year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">value =</span> <span class="kw">mean</span>(value)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> value, <span class="dt">color =</span> region, <span class="dt">linetype =</span> region)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-8" title="8"><span class="st">  </span><span class="kw">theme_light</span>(<span class="dv">9</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-9" title="9"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy at birth (years)</span><span class="ch">\n</span><span class="st">&quot;</span>, </a>
+<a class="sourceLine" id="cb13-10" title="10">       <span class="dt">linetype =</span> <span class="ot">NULL</span>, <span class="dt">color =</span> <span class="ot">NULL</span>,</a>
+<a class="sourceLine" id="cb13-11" title="11">       <span class="dt">title =</span> <span class="st">&quot;Evolution of life expectancy (by region)</span><span class="ch">\n</span><span class="st">&quot;</span>)</a></code></pre></div>
 <p><img src="OpenDataBook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="food-and-agriculture-organization-of-the-united-nations" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> Food and Agriculture Organization of the United Nations</h3>
+<h3><span class="header-section-number">3.1.4</span> Food and Agriculture Organization of the United Nations</h3>
 <p><a href="http://www.fao.org/statistics/databases/en/">Food and Agriculture Organization</a>is responsible for the compilation, analysis and dissemination of a comprehensive variety of statistical data on food, agriculture and the sustainable management of natural resources. The organization provides free and unrestricted access to 16 major databases and produces publications with key statistical content covering different topics.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">kable</span>(FAO_opendata) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
-<a class="sourceLine" id="cb21-3" title="3">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">kable</span>(FAO_opendata) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
+<a class="sourceLine" id="cb14-3" title="3">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1426,10 +1451,10 @@ FAOâ€™s Statistical Capacity Assessment survey for SDG Indicators provides 
 <li><strong>Samples of FAO data</strong>:</li>
 </ul>
 <p>Here is an example of an extraction of apple production data in France</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">kable</span>(FAOSTAT_data[ ,<span class="kw">c</span>(<span class="st">&quot;Domain&quot;</span>,<span class="st">&quot;Area&quot;</span>,<span class="st">&quot;Element&quot;</span>,<span class="st">&quot;Item&quot;</span>,<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;Unit&quot;</span>,<span class="st">&quot;Value&quot;</span>)]) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
-<a class="sourceLine" id="cb22-3" title="3">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb22-4" title="4"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;600px&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">kable</span>(FAOSTAT_data[ ,<span class="kw">c</span>(<span class="st">&quot;Domain&quot;</span>,<span class="st">&quot;Area&quot;</span>,<span class="st">&quot;Element&quot;</span>,<span class="st">&quot;Item&quot;</span>,<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;Unit&quot;</span>,<span class="st">&quot;Value&quot;</span>)]) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</a>
+<a class="sourceLine" id="cb15-3" title="3">                <span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="st">  </span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;600px&quot;</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <thead>
@@ -2795,49 +2820,20 @@ tonnes
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">unique</span>(FAOSTAT_data<span class="op">$</span>Item)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">unique</span>(FAOSTAT_data<span class="op">$</span>Item)</a></code></pre></div>
 <pre><code>## [1] Apples
 ## Levels: Apples</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">summary</span>(FAOSTAT_data<span class="op">$</span>Value)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">summary</span>(FAOSTAT_data<span class="op">$</span>Value)</a></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 1283211 1786504 2131785 2349757 2752250 5050000</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb27-2" title="2"><span class="kw">ggplot</span>(FAOSTAT_data, <span class="kw">aes</span>(<span class="dt">x =</span> Year, <span class="dt">y =</span> Value)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb27-3" title="3"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">ggplot</span>(FAOSTAT_data, <span class="kw">aes</span>(<span class="dt">x =</span> Year, <span class="dt">y =</span> Value)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
 <p><img src="OpenDataBook_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-</div>
-<div id="united-nations" class="section level3">
-<h3><span class="header-section-number">3.1.4</span> United Nations</h3>
-<p>The United Nations (UN) is an intergovernmental organization that aims to maintain international peace and security, develop friendly relations among nations, achieve international cooperation, and harmonize their actions. The UN system includes a multitude of specialized agencies, such as the World Bank Group, the World Health Organization, the World Food Programme, UNESCO, and UNICEF. The United Nations Statistics Division is committed to the advancement of the global statistical system. They compile and dissiminate global statistical information, develop standards and norms for statistical activities, and support countries’ efforts to strengthen their national statistical systems.</p>
-<ul>
-<li><p><strong>UN Comtrade Database</strong>: <a href="https://comtrade.un.org/">UN COMTRADE</a> is the pseudonym for United Nations International Trade Statistics Database. It contains well over 3 billion data records since 1962 and is available publicly on the internet. In addition, it offers public and premium data API for easier integration/download. Time series of data for reporter countries starts as far back as 1962 and goes up to the most recent completed year. Current data is published annually in the International Trade Statistics Yearbook.</p></li>
-<li><p><strong>UNdata</strong>: <a href="http://data.un.org/">UNdata</a> is a web-based data service providing access to a variety of statistical resources compiled by the United Nations (UN) statistical system and other international agencies. Th UNdata contains 22 databases presenting various topics. Here is a sample of published databases:</p>
-<ul>
-<li>Energy statistics Database</li>
-<li>Environment Statistics Database</li>
-<li>Industrial Commodity Statistics Database</li>
-<li>International Financial Statistics</li>
-<li>World Tourism Data
-These data are produced from more than 20 international statistical sources compiled by the UN statistical system and other international agencies: <em>Food and Agriculture Organization, International Labour Organization, International Monetary Fund, The World Bank, UNESCO Institute for Statistics, United Nations Children’s Fund, World Meteorological Organization, World Tourism Organization…</em></li>
-</ul></li>
-<li><p><strong>The UNESCO Institute for Statistics</strong>: The UNESCO Institute for Statistics (UIS) is the official and trusted source of internationally-comparable data on education, science, culture and communication. The <a href="http://data.uis.unesco.org/?lang=fr">UIS</a> provides free access to data for all UNESCO countries and regional groupings from 1970 to the most recent year available. Databases are accessible via: data rowser, bulk data download service and API. Data is organized in different themes: Education (out-of-school childre, literacy, financial resources in education…), SDG 4 (sustaiable development goal indicators), equity, science and innovation, culture (culture employement, feature films, international trade in cultural goods…), communication and information, demographic and socio-economic.</p></li>
-<li><p><strong>Sustainable Development Goals</strong>: The Sustainable Development Goals (SDGs) are a collection of 17 global goals designed to be a “blueprint to achieve a better and more sustainable future for all”. The SDGs, set in 2015 by the United Nations General Assembly and intended to be achieved by the year 2030.</p></li>
-</ul>
-<div class="figure">
-<img src="data/SDG.png" alt="SDG indicators" />
-<p class="caption">SDG indicators</p>
-</div>
-<p>The Sustainable Development Goals are: <em>No Poverty, Zero Hunger, Good Health and Well-being, Quality Education, Gender Equality, Clean Water and Sanitation, Affordable and Clean Energy, Decent Work and Economic Growth, Industry, Innovation, and Infrastructure, Reducing Inequality, Sustainable Cities and Communities, Responsible Consumption and Production, Climate Action, Life Below Water, Life On Land, Peace, Justice, and Strong Institutions, and Partnerships for the Goals</em>.</p>
-<p>The United Nations provide <a href="https://unstats.un.org/sdgs/indicators/database/">platform of the Global SDG Indicators Database</a>. This platform provides access to data compiled through the UN System in preparation for the Secretary-General’s annual report on “Progress towards the Sustainable Development Goals”.</p>
-<p>We can also explore these indicators by the mean of <a href="https://sdg-tracker.org/">SDG Tracker</a>: a free, open-access resource where users can track and explore global and country-level progress towards each of the 17 Sustainable Development Goals through interactive data visualizations.</p>
-<div class="figure">
-<img src="data/Map_Sustainable_Development_Goals_2019.jpg" alt="Sustainable Development Report Dashboards 2019" />
-<p class="caption">Sustainable Development Report Dashboards 2019</p>
-</div>
 </div>
 <div id="the-world-resources-institute" class="section level3">
 <h3><span class="header-section-number">3.1.5</span> The World Resources Institute</h3>
-<p>World Resources Institute (WRI) is a global research organization that spans more than 60 countries. Is mission consists of promoting environmental sustainability and human health and well-being. WRI provides open access to reliable data related to global environment issues (forests monitoring, climate change, water scarcity…). In addition, WRO produces maps, charts, and visual resources based on their datasets.</p>
+<p>World Resources Institute (WRI) is a global research organization that spans more than 60 countries. Its mission consists of promoting environmental sustainability and human health and well-being. WRI provides open access to reliable data related to global environment issues (forests monitoring, climate change, water scarcity…). In addition, WRI produces maps, charts, and visual resources based on their datasets.</p>
 <div class="figure">
 <img src="data/world-greenhouse-gas-emissions-sankey-chart-2019_2.jpg" alt="WOrld Greenhouse Gas EMission in 2016 (WRI)" />
 <p class="caption">WOrld Greenhouse Gas EMission in 2016 (WRI)</p>
@@ -2854,45 +2850,512 @@ These data are produced from more than 20 international statistical sources comp
 <li><strong>Aqueduct</strong>: <a href="https://www.wri.org/aqueduct">Aqueduct</a> enable users to measure, map, and mitigate water risks around the world with its open-source, and high-resolution platform. It uses multiple data layers to display water risks at any given location.</li>
 </ul>
 </div>
-<div id="earth-data" class="section level3">
-<h3><span class="header-section-number">3.1.6</span> Earth data</h3>
+<div id="earth-observation-data" class="section level3">
+<h3><span class="header-section-number">3.1.6</span> Earth Observation data</h3>
+<p>Remote sensing is a technology that aims to observe and study the Earth systems, and their dynamics.
+Data related to remote sensing, specifically satellite images, have a purpose to observe and study the Earth from space; its land surface, the oceans and the atmosphere. Earth observation data can be acquired through different public and private channels. Free of cost data is generally provided by public agencies. Here is a list of the main providers of open earth observation data:</p>
 <ul>
-<li>Earth data Nasa: <a href="https://earthdata.nasa.gov/earth-observation-data" class="uri">https://earthdata.nasa.gov/earth-observation-data</a></li>
+<li><p><strong>European Space Agency (ESA):</strong> The European Space Agency is an intergovernmental organisation dedicated to the exploration of space. It manages Copernicus Earth Observation program that aims at chieving a global, continuous, autonomous, high quality, wide range Earth observation capacity. The data and information produced in the framework Copernicus are made available free-to-charge all its users and the public. The ESA different provides tools to download, visualize and process earth observation data.</p>
+<ul>
+<li><a href="https://scihub.copernicus.eu/dhus/#/home">Sentinel open Access Hub</a></li>
+</ul></li>
+<li><p><strong>United States Geological Survey (USGS)</strong>: The USGS is a scientific agency of the United STates government studying the the landscape of the United States, its natural resources, and the natural hazards that threaten it. It operates the landsat program with the NASA. Landsat is the longest-running enterprise for acquisition of satellite imagery of Earth. Landsat data products held in the USGS archives can be searched and downloaded at no charge from a variety of <a href="https://www.usgs.gov/land-resources/nli/landsat/landsat-data-access?qt-science_support_page_related_con=0#qt-science_support_page_related_con">sources</a></p></li>
+<li><p><strong>National Aeronautics and Space Administration (NASA)</strong>: The NASA is an independant agency of the United States Federal Government responsible for the civilian space program. NASA promotes the full and open sharing of all its data to research and applications communities, private industry, academia, and the general public by the mean of their Earth Observing System Data and Information System (EOSDIS). They provide different tools and products for seraching, using and visualizing remote sensing data:</p>
+<ul>
+<li><a href="https://search.earthdata.nasa.gov/search">Earthdata Search</a></li>
+<li><a href="https://earthdata.nasa.gov/eosdis/science-system-description/eosdis-components/gibs">Global Imagery Browse Services</a></li>
+<li><a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time">Land, Atmosphere Near real-time Capability for EOS</a></li>
+<li><a href="https://worldview.earthdata.nasa.gov/">WorldView</a></li>
+<li><a href="https://open.nasa.gov/">Open NASA</a></li>
+</ul></li>
 </ul>
+<p>Here is an example of visualizing downloaded Landsat data:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(raster)</a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="kw">library</span>(rgdal)</a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="co"># Blue</span></a>
+<a class="sourceLine" id="cb21-4" title="4">b2 &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="st">&#39;data/rs/LC08_044034_20170614_B2.tif&#39;</span>)</a>
+<a class="sourceLine" id="cb21-5" title="5"><span class="co"># Green</span></a>
+<a class="sourceLine" id="cb21-6" title="6">b3 &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="st">&#39;data/rs/LC08_044034_20170614_B3.tif&#39;</span>)</a>
+<a class="sourceLine" id="cb21-7" title="7"><span class="co"># Red</span></a>
+<a class="sourceLine" id="cb21-8" title="8">b4 &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="st">&#39;data/rs/LC08_044034_20170614_B4.tif&#39;</span>)</a>
+<a class="sourceLine" id="cb21-9" title="9"><span class="co"># Near Infrared (NIR)</span></a>
+<a class="sourceLine" id="cb21-10" title="10">b5 &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="st">&#39;data/rs/LC08_044034_20170614_B5.tif&#39;</span>)</a>
+<a class="sourceLine" id="cb21-11" title="11"></a>
+<a class="sourceLine" id="cb21-12" title="12">landsatRGB &lt;-<span class="st"> </span><span class="kw">stack</span>(b4, b3, b2)</a>
+<a class="sourceLine" id="cb21-13" title="13"><span class="kw">plotRGB</span>(landsatRGB, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">stretch =</span> <span class="st">&quot;lin&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Landsat True Color Composite&quot;</span>)</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="other-resources" class="section level3">
 <h3><span class="header-section-number">3.1.7</span> Other resources</h3>
+<p>In addition to the previously cited organisations and services , plenty of other initiatives and services are providing and promoting the collection and usage of open data in a world wide scale.</p>
 <ul>
-<li><p><strong>Our World in data</strong>: <a href="https://ourworldindata.org/" class="uri">https://ourworldindata.org/</a></p></li>
-<li><p><strong>Open knowledge FOundation</strong></p></li>
+<li><strong>Our World in data</strong>: <a href="https://ourworldindata.org/">Our World in data</a> is a collaborative project developed by reserachers at the University of Oxford and the non profit organization “Global Exhange Data Lab” to publish open data and statistics covering various world developement indicators. The website contains different articles based on open data and describing topics like: health, demographic change, food, agriuculture, energy, environment…</li>
 </ul>
-<p>GLobal Open Index: <a href="https://index.okfn.org/" class="uri">https://index.okfn.org/</a></p>
+<div class="figure">
+<img src="data/ourworldindata.png" alt="Global CO2 emissions by world region since 1750 (Our World In Data)" />
+<p class="caption">Global CO2 emissions by world region since 1750 (Our World In Data)</p>
+</div>
 <ul>
-<li><p><strong>CKAN</strong>:
-<a href="https://ckan.org/" class="uri">https://ckan.org/</a></p></li>
-<li><p><strong>StatPlanet</strong>:</p></li>
+<li><strong>Open knowledge FOundation (OKF)</strong>: <a href="https://okfn.org/">Open knowledge FOundation</a> is a global, non-profit network that promotes and shares information at no charge, including both content and data.
+<ul>
+<li><em>Comprehensive Knowledge Archive Network (CKAN)</em>: Open knowledge FOundation maintains the <a href="https://ckan.org/">COmprehensive Knowledge Archive Network (CKAN)</a> which is an open- source open data portal for the storage and distribution of open data. CKAN is used by differentnational and local governments such as: US data gov, european data portal, open data swiss, canadian data gov… Once the data is published, users can use its faceted search features to browse and find the data they need, and preview it using maps, graphs and tables – whether they are developers, journalists, researchers, NGOs, citizens, or even your own staff.</li>
+<li><em>GLobal Open Index</em>: <a href="https://index.okfn.org/">The Global Open Data Index (GODI)</a> is the annual global benchmark for publication of open government data, run by the Open Knowledge Network.</li>
+</ul></li>
 </ul>
-<p>StatPlanet: <a href="https://www.statsilk.com/software/statplanet-cloud" class="uri">https://www.statsilk.com/software/statplanet-cloud</a></p>
+<div class="figure">
+<img src="data/Opendataindex.png" alt="Open Data Index by country/thematic" />
+<p class="caption">Open Data Index by country/thematic</p>
+</div>
 <ul>
-<li><strong>DBnomics</strong>:
-DBnomics <a href="https://db.nomics.world/" class="uri">https://db.nomics.world/</a></li>
+<li><strong>DBnomics</strong>: <a href="https://db.nomics.world/">DBnomics</a> is an oen platform aggregating global economic data and providing direct access to these data via one API. Examples of data provides: European Central Bank, Eurostat, Internationa Monetary Fund, International Labour Organization, WOrld Bank…</li>
 </ul>
 </div>
 </div>
 <div id="tools" class="section level2">
-<h2><span class="header-section-number">3.2</span> Tools:</h2>
+<h2><span class="header-section-number">3.2</span> Tools</h2>
+<div id="extracting-world-bank-data" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Extracting World Bank Data</h3>
+<p>There are different R and Python libraries providing access to World Bank data. We will test two of them in this chapter: <code>WDI</code> and <code>Wbstats</code>.</p>
+<div id="wdi" class="section level4">
+<h4><span class="header-section-number">3.2.1.1</span> WDI</h4>
 <ul>
-<li><p>rdbnomics:
-<a href="https://git.nomics.world/dbnomics/rdbnomics/" class="uri">https://git.nomics.world/dbnomics/rdbnomics/</a>
-<a href="https://github.com/dbnomics/rdbnomics" class="uri">https://github.com/dbnomics/rdbnomics</a>
-<a href="https://macro.cepremap.fr/article/2019-10/rdbnomics-tutorial/" class="uri">https://macro.cepremap.fr/article/2019-10/rdbnomics-tutorial/</a></p></li>
-<li><p>WDI:
-<a href="https://rpubs.com/juanhklopper/maternal_mortality_World_Bank" class="uri">https://rpubs.com/juanhklopper/maternal_mortality_World_Bank</a>
-<a href="https://cran.r-project.org/web/packages/WDI/WDI.pdf" class="uri">https://cran.r-project.org/web/packages/WDI/WDI.pdf</a></p></li>
-<li><p>Wbstats:
-<a href="https://cran.r-project.org/web/packages/wbstats/vignettes/Using_the_wbstats_package.html" class="uri">https://cran.r-project.org/web/packages/wbstats/vignettes/Using_the_wbstats_package.html</a></p></li>
+<li><strong>Maternal mortality ratio</strong></li>
+</ul>
+<p>The <code>WDI</code> library provides easy access to the WorldBank open data. We can use the command <code>WDIsearch</code> for looking up an indicator.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">library</span>(WDI)</a>
+<a class="sourceLine" id="cb22-2" title="2"></a>
+<a class="sourceLine" id="cb22-3" title="3"><span class="kw">WDIsearch</span>(<span class="dt">string =</span> <span class="st">&quot;maternal mortality ratio&quot;</span>,</a>
+<a class="sourceLine" id="cb22-4" title="4">          <span class="dt">field =</span> <span class="st">&quot;name&quot;</span>,</a>
+<a class="sourceLine" id="cb22-5" title="5">          <span class="dt">short =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>##      indicator       
+## [1,] &quot;SH.STA.MMRT.NE&quot;
+## [2,] &quot;SH.STA.MMRT&quot;   
+##      name                                                                   
+## [1,] &quot;Maternal mortality ratio (national estimate, per 100,000 live births)&quot;
+## [2,] &quot;Maternal mortality ratio (modeled estimate, per 100,000 live births)&quot; 
+##      description                                                                                                                                                                                                                                                                                                                                                      
+## [1,] &quot;Maternal mortality ratio is the number of women who die from pregnancy-related causes while pregnant or within 42 days of pregnancy termination per 100,000 live births.&quot;                                                                                                                                                                                       
+## [2,] &quot;Maternal mortality ratio is the number of women who die from pregnancy-related causes while pregnant or within 42 days of pregnancy termination per 100,000 live births. The data are estimated with a regression model using information on the proportion of maternal deaths among non-AIDS deaths in women ages 15-49, fertility, birth attendants, and GDP.&quot;
+##      sourceDatabase                
+## [1,] &quot;World Development Indicators&quot;
+## [2,] &quot;World Development Indicators&quot;
+##      sourceOrganization                                                                                                                                                     
+## [1,] &quot;UNICEF, State of the World&#39;s Children, Childinfo, and Demographic and Health Surveys.&quot;                                                                                
+## [2,] &quot;WHO, UNICEF, UNFPA, World Bank Group, and the United Nations Population Division. Trends in Maternal Mortality: 1990 to 2015. Geneva, World Health Organization, 2015&quot;</code></pre>
+<p>Once we get the label of the desired indicator, we can use the command <code>WDI()</code> to extract the data by specifying the indicator name, the list of countries, and the sart/end dates.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="kw">WDI</span>(<span class="dt">country =</span> <span class="kw">c</span>(<span class="st">&quot;US&quot;</span>,</a>
+<a class="sourceLine" id="cb24-3" title="3">                <span class="st">&quot;BR&quot;</span>,</a>
+<a class="sourceLine" id="cb24-4" title="4">                <span class="st">&quot;ZA&quot;</span>),</a>
+<a class="sourceLine" id="cb24-5" title="5">    <span class="dt">indicator =</span> <span class="st">&quot;SH.STA.MMRT&quot;</span>,</a>
+<a class="sourceLine" id="cb24-6" title="6">    <span class="dt">start =</span> <span class="dv">2005</span>,</a>
+<a class="sourceLine" id="cb24-7" title="7">    <span class="dt">end =</span> <span class="dv">2015</span>,</a>
+<a class="sourceLine" id="cb24-8" title="8">    <span class="dt">extra =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb24-9" title="9"><span class="kw">head</span>(df)</a></code></pre></div>
+<pre><code>##   iso2c country SH.STA.MMRT year iso3c                    region  capital
+## 1    BR  Brazil          63 2015   BRA Latin America &amp; Caribbean Brasilia
+## 2    BR  Brazil          62 2014   BRA Latin America &amp; Caribbean Brasilia
+## 3    BR  Brazil          61 2013   BRA Latin America &amp; Caribbean Brasilia
+## 4    BR  Brazil          60 2012   BRA Latin America &amp; Caribbean Brasilia
+## 5    BR  Brazil          61 2011   BRA Latin America &amp; Caribbean Brasilia
+## 6    BR  Brazil          65 2010   BRA Latin America &amp; Caribbean Brasilia
+##   longitude latitude              income lending
+## 1  -47.9292 -15.7801 Upper middle income    IBRD
+## 2  -47.9292 -15.7801 Upper middle income    IBRD
+## 3  -47.9292 -15.7801 Upper middle income    IBRD
+## 4  -47.9292 -15.7801 Upper middle income    IBRD
+## 5  -47.9292 -15.7801 Upper middle income    IBRD
+## 6  -47.9292 -15.7801 Upper middle income    IBRD</code></pre>
+<p>We can filter the extratced data using <code>filter</code> command of <code>dplyr</code> package.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb26-2" title="2">brazil &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(iso2c <span class="op">==</span><span class="st"> &quot;BR&quot;</span>)</a>
+<a class="sourceLine" id="cb26-3" title="3">usa &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(iso2c <span class="op">==</span><span class="st"> &quot;US&quot;</span>)</a>
+<a class="sourceLine" id="cb26-4" title="4"><span class="kw">head</span>(usa)</a></code></pre></div>
+<pre><code>##   iso2c       country SH.STA.MMRT year iso3c        region         capital
+## 1    US United States          18 2015   USA North America Washington D.C.
+## 2    US United States          16 2014   USA North America Washington D.C.
+## 3    US United States          16 2013   USA North America Washington D.C.
+## 4    US United States          16 2012   USA North America Washington D.C.
+## 5    US United States          15 2011   USA North America Washington D.C.
+## 6    US United States          15 2010   USA North America Washington D.C.
+##   longitude latitude      income        lending
+## 1   -77.032  38.8895 High income Not classified
+## 2   -77.032  38.8895 High income Not classified
+## 3   -77.032  38.8895 High income Not classified
+## 4   -77.032  38.8895 High income Not classified
+## 5   -77.032  38.8895 High income Not classified
+## 6   -77.032  38.8895 High income Not classified</code></pre>
+<p>Now, we can use <code>plotly</code> library for producing an interactive visualization of the evolution of our indicator in different countries.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">library</span>(plotly)</a>
+<a class="sourceLine" id="cb28-2" title="2"></a>
+<a class="sourceLine" id="cb28-3" title="3">trace_brazil =<span class="st"> </span>brazil<span class="op">$</span>SH.STA.MMRT</a>
+<a class="sourceLine" id="cb28-4" title="4">trace_usa =<span class="st"> </span>usa<span class="op">$</span>SH.STA.MMRT</a>
+<a class="sourceLine" id="cb28-5" title="5"></a>
+<a class="sourceLine" id="cb28-6" title="6">dts =<span class="st"> </span>brazil<span class="op">$</span>year</a>
+<a class="sourceLine" id="cb28-7" title="7"></a>
+<a class="sourceLine" id="cb28-8" title="8">df.plot &lt;-<span class="st"> </span><span class="kw">data.frame</span>(dts, trace_brazil, trace_usa)</a>
+<a class="sourceLine" id="cb28-9" title="9"></a>
+<a class="sourceLine" id="cb28-10" title="10">p1 &lt;-<span class="st"> </span><span class="kw">plot_ly</span>(df.plot,</a>
+<a class="sourceLine" id="cb28-11" title="11">              <span class="dt">x =</span> <span class="op">~</span>dts,</a>
+<a class="sourceLine" id="cb28-12" title="12">              <span class="dt">y =</span> <span class="op">~</span>trace_brazil,</a>
+<a class="sourceLine" id="cb28-13" title="13">              <span class="dt">name =</span> <span class="st">&quot;Brazil&quot;</span>,</a>
+<a class="sourceLine" id="cb28-14" title="14">              <span class="dt">type =</span> <span class="st">&quot;scatter&quot;</span>,</a>
+<a class="sourceLine" id="cb28-15" title="15">              <span class="dt">mode =</span> <span class="st">&quot;lines+markers&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb28-16" title="16"><span class="st">  </span><span class="kw">add_trace</span>(<span class="dt">y =</span> <span class="op">~</span>trace_usa,</a>
+<a class="sourceLine" id="cb28-17" title="17">            <span class="dt">name =</span> <span class="st">&quot;USA&quot;</span>,</a>
+<a class="sourceLine" id="cb28-18" title="18">            <span class="dt">type =</span> <span class="st">&quot;scatter&quot;</span>,</a>
+<a class="sourceLine" id="cb28-19" title="19">            <span class="dt">mode =</span> <span class="st">&quot;lines+markers&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb28-20" title="20"><span class="st">  </span><span class="kw">layout</span>(<span class="dt">title =</span> <span class="st">&quot;Maternal mortality per 100,000 births&quot;</span>,</a>
+<a class="sourceLine" id="cb28-21" title="21">         <span class="dt">xaxis =</span> <span class="kw">list</span>(<span class="dt">title =</span> <span class="st">&quot;Year&quot;</span>,</a>
+<a class="sourceLine" id="cb28-22" title="22">                      <span class="dt">zeroline =</span> <span class="ot">FALSE</span>),</a>
+<a class="sourceLine" id="cb28-23" title="23">         <span class="dt">yaxis =</span> <span class="kw">list</span>(<span class="dt">title =</span> <span class="st">&quot;Count&quot;</span>,</a>
+<a class="sourceLine" id="cb28-24" title="24">                      <span class="dt">zeroline =</span> <span class="ot">FALSE</span>))</a>
+<a class="sourceLine" id="cb28-25" title="25">p1</a></code></pre></div>
+<div id="htmlwidget-b58bd71a1b9beb75c702" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b58bd71a1b9beb75c702">{"x":{"visdat":{"2b183ef060c0":["function () ","plotlyVisDat"]},"cur_data":"2b183ef060c0","attrs":{"2b183ef060c0":{"x":{},"y":{},"mode":"lines+markers","name":"Brazil","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"2b183ef060c0.1":{"x":{},"y":{},"mode":"lines+markers","name":"USA","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Maternal mortality per 100,000 births","xaxis":{"domain":[0,1],"automargin":true,"title":"Year","zeroline":false},"yaxis":{"domain":[0,1],"automargin":true,"title":"Count","zeroline":false},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005],"y":[63,62,61,60,61,65,69,70,71,72,71],"mode":"lines+markers","name":"Brazil","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005],"y":[18,16,16,16,15,15,15,14,14,14,13],"mode":"lines+markers","name":"USA","type":"scatter","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong>GDP Indicator</strong></li>
+</ul>
+<p>Since, there are a plenty of indicators related to gdp, we can use regular expressions for enhancing our search.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">WDIsearch</span>(<span class="st">&quot;gdp.*capita.*constant&quot;</span>)</a></code></pre></div>
+<pre><code>##      indicator             
+## [1,] &quot;6.0.GDPpc_constant&quot;  
+## [2,] &quot;NY.GDP.PCAP.PP.KD.87&quot;
+## [3,] &quot;NY.GDP.PCAP.PP.KD&quot;   
+## [4,] &quot;NY.GDP.PCAP.KN&quot;      
+## [5,] &quot;NY.GDP.PCAP.KD&quot;      
+##      name                                                  
+## [1,] &quot;GDP per capita, PPP (constant 2011 international $) &quot;
+## [2,] &quot;GDP per capita, PPP (constant 1987 international $)&quot; 
+## [3,] &quot;GDP per capita, PPP (constant 2011 international $)&quot; 
+## [4,] &quot;GDP per capita (constant LCU)&quot;                       
+## [5,] &quot;GDP per capita (constant 2010 US$)&quot;</code></pre>
+<p>Now, let’s download the data corresponding to “GDP per capita (constant 2000 US$)”: the indicator name is <code>NY.GDP.PCAP.KD</code>. We can rename directly the indicator as <code>gdp_per_capita</code>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">dat =<span class="st"> </span><span class="kw">WDI</span>(<span class="dt">indicator=</span><span class="kw">c</span>(<span class="st">&quot;gdp_per_capita&quot;</span> =<span class="st"> &quot;NY.GDP.PCAP.KD&quot;</span>), </a>
+<a class="sourceLine" id="cb31-2" title="2">          <span class="dt">country=</span><span class="kw">c</span>(<span class="st">&#39;MX&#39;</span>,<span class="st">&#39;CA&#39;</span>,<span class="st">&#39;US&#39;</span>), </a>
+<a class="sourceLine" id="cb31-3" title="3">          <span class="dt">start=</span><span class="dv">1960</span>, </a>
+<a class="sourceLine" id="cb31-4" title="4">          <span class="dt">end=</span><span class="dv">2012</span>)</a>
+<a class="sourceLine" id="cb31-5" title="5"><span class="kw">head</span>(dat)</a></code></pre></div>
+<pre><code>##   iso2c country gdp_per_capita year
+## 1    CA  Canada       48788.33 2012
+## 2    CA  Canada       48466.85 2011
+## 3    CA  Canada       47450.32 2010
+## 4    CA  Canada       46542.90 2009
+## 5    CA  Canada       48497.56 2008
+## 6    CA  Canada       48536.53 2007</code></pre>
+<p>We can plot the data for the 3 selected countries</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="kw">ggplot</span>(dat, </a>
+<a class="sourceLine" id="cb33-3" title="3">       <span class="kw">aes</span>(year, gdp_per_capita, <span class="dt">color=</span>country)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-4" title="4"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-5" title="5"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&#39;Year&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-6" title="6"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&#39;GDP per capita&#39;</span>)</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<ul>
+<li><strong>Life expctancy</strong>:</li>
+</ul>
+<p>Let’s find the IDs for the following indicators: life expectancy, GDP, and infant mortality.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">WDIsearch</span>(<span class="st">&quot;gdp.*capita.*US</span><span class="ch">\\</span><span class="st">$&quot;</span>)</a></code></pre></div>
+<pre><code>##      indicator        name                                
+## [1,] &quot;NY.GDP.PCAP.KD&quot; &quot;GDP per capita (constant 2010 US$)&quot;
+## [2,] &quot;NY.GDP.PCAP.CD&quot; &quot;GDP per capita (current US$)&quot;</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">WDIsearch</span>(<span class="st">&quot;life expectancy at birth.*total&quot;</span>)</a></code></pre></div>
+<pre><code>##                                 indicator 
+##                          &quot;SP.DYN.LE00.IN&quot; 
+##                                      name 
+## &quot;Life expectancy at birth, total (years)&quot;</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">WDIsearch</span>(<span class="st">&quot;^mortality.*rate.*infant&quot;</span>)</a></code></pre></div>
+<pre><code>##       indicator          
+##  [1,] &quot;HF.DYN.IMRT.IN.Q5&quot;
+##  [2,] &quot;HF.DYN.IMRT.IN.Q4&quot;
+##  [3,] &quot;HF.DYN.IMRT.IN.Q3&quot;
+##  [4,] &quot;HF.DYN.IMRT.IN.Q2&quot;
+##  [5,] &quot;HF.DYN.IMRT.IN.Q1&quot;
+##  [6,] &quot;HF.DYN.IMRT.IN&quot;   
+##  [7,] &quot;SP.DYN.IMRT.MA.IN&quot;
+##  [8,] &quot;SP.DYN.IMRT.IN&quot;   
+##  [9,] &quot;SP.DYN.IMRT.FE.IN&quot;
+##       name                                                          
+##  [1,] &quot;Mortality rate, infant (per 1,000 live births): Q5 (highest)&quot;
+##  [2,] &quot;Mortality rate, infant (per 1,000 live births): Q4&quot;          
+##  [3,] &quot;Mortality rate, infant (per 1,000 live births): Q3&quot;          
+##  [4,] &quot;Mortality rate, infant (per 1,000 live births): Q2&quot;          
+##  [5,] &quot;Mortality rate, infant (per 1,000 live births): Q1 (lowest)&quot; 
+##  [6,] &quot;Mortality rate, infant (per 1,000 live births)&quot;              
+##  [7,] &quot;Mortality rate, infant, male (per 1,000 live births)&quot;        
+##  [8,] &quot;Mortality rate, infant (per 1,000 live births)&quot;              
+##  [9,] &quot;Mortality rate, infant, female (per 1,000 live births)&quot;</code></pre>
+<p>Now we download the data</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">wdi_dat &lt;-<span class="st"> </span><span class="kw">WDI</span>(<span class="dt">indicator =</span> <span class="kw">c</span>(<span class="st">&quot;GDP&quot;</span> =<span class="st"> &quot;NY.GDP.PCAP.KD&quot;</span>, </a>
+<a class="sourceLine" id="cb40-2" title="2">                             <span class="st">&quot;life_expectancy&quot;</span> =<span class="st"> &quot;SP.DYN.LE00.IN&quot;</span>, </a>
+<a class="sourceLine" id="cb40-3" title="3">                             <span class="st">&quot;infant_mortality&quot;</span> =<span class="st"> &quot;SP.DYN.IMRT.IN&quot;</span>), </a>
+<a class="sourceLine" id="cb40-4" title="4">               <span class="dt">start =</span> <span class="dv">1960</span>, <span class="dt">end =</span> <span class="dv">2015</span>, </a>
+<a class="sourceLine" id="cb40-5" title="5">               <span class="dt">extra =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb40-6" title="6"><span class="kw">head</span>(wdi_dat)</a></code></pre></div>
+<pre><code>##   iso2c    country year GDP life_expectancy infant_mortality iso3c     region
+## 1    1A Arab World 1960  NA        46.54691               NA   ARB Aggregates
+## 2    1A Arab World 1965  NA        49.49648               NA   ARB Aggregates
+## 3    1A Arab World 1966  NA        50.07295               NA   ARB Aggregates
+## 4    1A Arab World 1972  NA        53.40689               NA   ARB Aggregates
+## 5    1A Arab World 1973  NA        54.01585               NA   ARB Aggregates
+## 6    1A Arab World 1961  NA        47.14162               NA   ARB Aggregates
+##   capital longitude latitude     income    lending
+## 1                            Aggregates Aggregates
+## 2                            Aggregates Aggregates
+## 3                            Aggregates Aggregates
+## 4                            Aggregates Aggregates
+## 5                            Aggregates Aggregates
+## 6                            Aggregates Aggregates</code></pre>
+<p>We can remove the entries with aggregated regional values</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">wdi_dat &lt;-<span class="st"> </span><span class="kw">subset</span>(wdi_dat, region <span class="op">!=</span><span class="st"> &quot;Aggregates&quot;</span>)</a></code></pre></div>
+<p>Let’s plot the distribution of infant mortality and GDP levels</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb43-2" title="2"><span class="kw">ggplot</span>(<span class="kw">subset</span>(wdi_dat, year <span class="op">==</span><span class="st"> </span><span class="dv">2008</span>), </a>
+<a class="sourceLine" id="cb43-3" title="3">       <span class="kw">aes</span>(<span class="dt">x =</span> GDP, <span class="dt">y =</span> infant_mortality)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>We can compare poverty in America with some world’s poor country, we can reproduce the graph presented by the <a href="https://inequality.stanford.edu/publications/media/details/can-poverty-america-be-compared-conditions-world%E2%80%99s-poorest-countries">Stanford Center on Poverty &amp; Inequality article</a></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1"><span class="co"># select countries</span></a>
+<a class="sourceLine" id="cb44-2" title="2">country_list =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;United States&quot;</span>, <span class="st">&quot;Rwanda&quot;</span>, <span class="st">&quot;Mongolia&quot;</span>, <span class="st">&quot;Pakistan&quot;</span>, <span class="st">&quot;Lao PDR&quot;</span>, <span class="st">&quot;Bhutan&quot;</span>, </a>
+<a class="sourceLine" id="cb44-3" title="3">                 <span class="st">&quot;Malaysia&quot;</span>, <span class="st">&quot;Brazil&quot;</span>, <span class="st">&quot;Ireland&quot;</span>, <span class="st">&quot;Japan&quot;</span>, <span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Netherlands&quot;</span>)</a>
+<a class="sourceLine" id="cb44-4" title="4"><span class="co"># subset data for the listed countries</span></a>
+<a class="sourceLine" id="cb44-5" title="5">lifexp_countries &lt;-<span class="st"> </span><span class="kw">subset</span>(wdi_dat, </a>
+<a class="sourceLine" id="cb44-6" title="6">                           country <span class="op">%in%</span><span class="st"> </span>country_list)</a>
+<a class="sourceLine" id="cb44-7" title="7"><span class="co"># plot data</span></a>
+<a class="sourceLine" id="cb44-8" title="8"><span class="kw">ggplot</span>(<span class="kw">subset</span>(lifexp_countries, year <span class="op">==</span><span class="st"> &quot;2008&quot;</span>), </a>
+<a class="sourceLine" id="cb44-9" title="9">       <span class="kw">aes</span>(<span class="dt">x =</span> GDP, <span class="dt">y =</span> life_expectancy, <span class="dt">color =</span> country <span class="op">==</span><span class="st"> &quot;United States&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb44-10" title="10"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st">  </span></a>
+<a class="sourceLine" id="cb44-11" title="11"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> country), <span class="dt">size=</span><span class="dv">3</span>, <span class="dt">nudge_y =</span> <span class="fl">0.4</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb44-12" title="12"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">70000</span>))</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>We can follow the evoltion of these indicators in the selected countries using an interactive graph</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">library</span>(plotly)</a>
+<a class="sourceLine" id="cb45-2" title="2"></a>
+<a class="sourceLine" id="cb45-3" title="3">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">subset</span>(lifexp_countries, year <span class="op">&gt;</span><span class="st"> &quot;1999&quot;</span> <span class="op">&amp;</span><span class="st"> </span>year <span class="op">&lt;=</span><span class="st"> &quot;2015&quot;</span>), </a>
+<a class="sourceLine" id="cb45-4" title="4">            <span class="kw">aes</span>(<span class="dt">x =</span> GDP, <span class="dt">y =</span> life_expectancy, <span class="dt">color =</span> country <span class="op">==</span><span class="st"> &quot;United States&quot;</span>, <span class="dt">tooltip =</span> country)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb45-5" title="5"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb45-6" title="6"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>year) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb45-7" title="7"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;none&quot;</span>)</a>
+<a class="sourceLine" id="cb45-8" title="8"></a>
+<a class="sourceLine" id="cb45-9" title="9"><span class="kw">ggplotly</span>(g)</a></code></pre></div>
+<div id="htmlwidget-a7dee47bb932b51f4d99" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a7dee47bb932b51f4d99">{"x":{"data":[{"x":[8803.15252917931,1119.76412247204,44101.1073860839,42169.7332837779,672.875388277317,1600.4915005161,7007.04150381685,46435.2145080824,824.732863891439,330.882161644514,44694.4266636299],"y":[70.116,60.884,76.5365853658537,81.0760975609756,58.803,62.869,72.594,77.9878048780488,62.82,48.649,79.6439024390244],"text":["GDP:  8803.1525<br />life_expectancy: 70.11600<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1119.7641<br />life_expectancy: 60.88400<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 44101.1074<br />life_expectancy: 76.53659<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 42169.7333<br />life_expectancy: 81.07610<br />country == \"United States\": FALSE<br />country: Japan","GDP:   672.8754<br />life_expectancy: 58.80300<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  1600.4915<br />life_expectancy: 62.86900<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  7007.0415<br />life_expectancy: 72.59400<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 46435.2145<br />life_expectancy: 77.98780<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   824.7329<br />life_expectancy: 62.82000<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   330.8822<br />life_expectancy: 48.64900<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 44694.4267<br />life_expectancy: 79.64390<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[8804.32948764487,1187.88986089978,45695.5884140224,42239.1849263728,700.278330592421,1632.65152059909,6890.36414795931,47158.4235400612,820.140313156535,345.983409989842,45228.9145664485],"y":[70.462,61.808,77.1341463414634,81.4170731707317,59.372,63.319,72.782,78.190243902439,63.066,49.936,79.7951219512195],"text":["GDP:  8804.3295<br />life_expectancy: 70.46200<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1187.8899<br />life_expectancy: 61.80800<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 45695.5884<br />life_expectancy: 77.13415<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 42239.1849<br />life_expectancy: 81.41707<br />country == \"United States\": FALSE<br />country: Japan","GDP:   700.2783<br />life_expectancy: 59.37200<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  1632.6515<br />life_expectancy: 63.31900<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  6890.3641<br />life_expectancy: 72.78200<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 47158.4235<br />life_expectancy: 78.19024<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   820.1403<br />life_expectancy: 63.06600<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   345.9834<br />life_expectancy: 49.93600<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 45228.9146<br />life_expectancy: 79.79512<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[8954.83724534174,1291.97337013957,47591.8934268818,42190.8048727978,730.429271297853,1693.35000478825,7112.05559471704,46960.1847251141,826.368419899345,382.521644491654,46071.988322463],"y":[70.813,62.728,77.6341463414634,81.5634146341463,59.937,63.777,72.976,78.2926829268293,63.3,50.987,79.8463414634146],"text":["GDP:  8954.8372<br />life_expectancy: 70.81300<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1291.9734<br />life_expectancy: 62.72800<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 47591.8934<br />life_expectancy: 77.63415<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 42190.8049<br />life_expectancy: 81.56341<br />country == \"United States\": FALSE<br />country: Japan","GDP:   730.4293<br />life_expectancy: 59.93700<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  1693.3500<br />life_expectancy: 63.77700<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  7112.0556<br />life_expectancy: 72.97600<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 46960.1847<br />life_expectancy: 78.29268<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   826.3684<br />life_expectancy: 63.30000<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   382.5216<br />life_expectancy: 50.98700<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 46071.9883<br />life_expectancy: 79.84634<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[8943.82848255785,1366.81993803598,48236.9627237451,42744.0112849926,763.158775210105,1793.25370917456,7374.3430492443,46811.8893137336,846.361816862316,385.002344387193,46931.170298719],"y":[71.17,63.624,78.1390243902439,81.76,60.502,64.23,73.17,78.4926829268293,63.522,52.178,80.0951219512195],"text":["GDP:  8943.8285<br />life_expectancy: 71.17000<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1366.8199<br />life_expectancy: 63.62400<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 48236.9627<br />life_expectancy: 78.13902<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 42744.0113<br />life_expectancy: 81.76000<br />country == \"United States\": FALSE<br />country: Japan","GDP:   763.1588<br />life_expectancy: 60.50200<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  1793.2537<br />life_expectancy: 64.23000<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  7374.3430<br />life_expectancy: 73.17000<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 46811.8893<br />life_expectancy: 78.49268<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   846.3618<br />life_expectancy: 63.52200<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   385.0023<br />life_expectancy: 52.17800<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 46931.1703<br />life_expectancy: 80.09512<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[9346.03934316368,1424.05305759133,50546.4910496272,43671.6799739036,799.41190476348,1961.83840034669,7720.83042852016,47575.4792590688,888.011285632856,407.797128251774,48769.2875330134],"y":[71.531,64.483,78.5390243902439,82.030243902439,61.065,64.671,73.364,79.0951219512195,63.736,53.595,80.4975609756098],"text":["GDP:  9346.0393<br />life_expectancy: 71.53100<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1424.0531<br />life_expectancy: 64.48300<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 50546.4910<br />life_expectancy: 78.53902<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 43671.6800<br />life_expectancy: 82.03024<br />country == \"United States\": FALSE<br />country: Japan","GDP:   799.4119<br />life_expectancy: 61.06500<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  1961.8384<br />life_expectancy: 64.67100<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  7720.8304<br />life_expectancy: 73.36400<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 47575.4793<br />life_expectancy: 79.09512<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   888.0113<br />life_expectancy: 63.73600<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   407.7971<br />life_expectancy: 53.59500<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 48769.2875<br />life_expectancy: 80.49756<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[9535.41883036578,1504.45561362022,52276.2443324511,44393.6263842134,842.9118834439,2079.13047522721,7974.25085267787,48437.87957129,934.391947051063,437.982665098929,49981.2973402206],"y":[71.896,65.289,78.9439024390244,81.9251219512195,61.625,65.103,73.555,79.3463414634146,63.951,55.254,80.5463414634146],"text":["GDP:  9535.4188<br />life_expectancy: 71.89600<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1504.4556<br />life_expectancy: 65.28900<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 52276.2443<br />life_expectancy: 78.94390<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 44393.6264<br />life_expectancy: 81.92512<br />country == \"United States\": FALSE<br />country: Japan","GDP:   842.9119<br />life_expectancy: 61.62500<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  2079.1305<br />life_expectancy: 65.10300<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  7974.2509<br />life_expectancy: 73.55500<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 48437.8796<br />life_expectancy: 79.34634<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   934.3919<br />life_expectancy: 63.95100<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   437.9827<br />life_expectancy: 55.25400<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 49981.2973<br />life_expectancy: 80.54634<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[9805.72450610977,1588.53137118174,53466.0662222331,44995.4944919183,900.780853320282,2228.41928205623,8255.2860438746,50033.8834297352,969.621801590101,474.084015948122,51988.4303333853],"y":[72.26,66.031,79.2414634146342,82.3219512195122,62.182,65.538,73.744,79.6975609756098,64.176,57.083,80.7487804878049],"text":["GDP:  9805.7245<br />life_expectancy: 72.26000<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1588.5314<br />life_expectancy: 66.03100<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 53466.0662<br />life_expectancy: 79.24146<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 44995.4945<br />life_expectancy: 82.32195<br />country == \"United States\": FALSE<br />country: Japan","GDP:   900.7809<br />life_expectancy: 62.18200<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  2228.4193<br />life_expectancy: 65.53800<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  8255.2860<br />life_expectancy: 73.74400<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 50033.8834<br />life_expectancy: 79.69756<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   969.6218<br />life_expectancy: 64.17600<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   474.0840<br />life_expectancy: 57.08300<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 51988.4303<br />life_expectancy: 80.74878<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[10293.530341463,1859.0862346315,54708.0705789754,45687.2738147645,953.092091962223,2423.67120861002,8605.01751665582,51808.7651443972,993.551673725814,497.593671211146,53374.8195318189],"y":[72.618,66.709,79.6414634146341,82.5070731707317,62.731,65.985,73.931,80.0975609756098,64.42,58.915,80.9],"text":["GDP: 10293.5303<br />life_expectancy: 72.61800<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1859.0862<br />life_expectancy: 66.70900<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 54708.0706<br />life_expectancy: 79.64146<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 45687.2738<br />life_expectancy: 82.50707<br />country == \"United States\": FALSE<br />country: Japan","GDP:   953.0921<br />life_expectancy: 62.73100<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  2423.6712<br />life_expectancy: 65.98500<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  8605.0175<br />life_expectancy: 73.93100<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 51808.7651<br />life_expectancy: 80.09756<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   993.5517<br />life_expectancy: 64.42000<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   497.5937<br />life_expectancy: 58.91500<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 53374.8195<br />life_expectancy: 80.90000<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[10710.8722205603,1928.76867918445,51202.3593236575,45165.7879187717,1010.39066541789,2601.20051595729,8850.00922148094,52727.5193016764,987.8456798175,538.567658944135,52832.3073207372],"y":[72.966,67.325,80.0951219512195,82.5875609756098,63.271,66.447,74.118,80.2512195121951,64.685,60.612,81.1],"text":["GDP: 10710.8722<br />life_expectancy: 72.96600<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  1928.7687<br />life_expectancy: 67.32500<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 51202.3593<br />life_expectancy: 80.09512<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 45165.7879<br />life_expectancy: 82.58756<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1010.3907<br />life_expectancy: 63.27100<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  2601.2005<br />life_expectancy: 66.44700<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  8850.0092<br />life_expectancy: 74.11800<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 52727.5193<br />life_expectancy: 80.25122<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   987.8457<br />life_expectancy: 64.68500<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   538.5677<br />life_expectancy: 60.61200<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 52832.3073<br />life_expectancy: 81.10000<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[10594.9865923924,2038.56141952102,48110.551499518,42724.7603699577,1068.16851075414,2527.95836109812,8559.2344996317,50533.5068799198,993.382943724454,557.11378232805,50164.9258803343],"y":[73.3,67.882,80.190243902439,82.9314634146342,63.797,66.916,74.305,80.5487804878049,64.969,62.129,81.3512195121951],"text":["GDP: 10594.9866<br />life_expectancy: 73.30000<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  2038.5614<br />life_expectancy: 67.88200<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 48110.5515<br />life_expectancy: 80.19024<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 42724.7604<br />life_expectancy: 82.93146<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1068.1685<br />life_expectancy: 63.79700<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  2527.9584<br />life_expectancy: 66.91600<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  8559.2345<br />life_expectancy: 74.30500<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 50533.5069<br />life_expectancy: 80.54878<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   993.3829<br />life_expectancy: 64.96900<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   557.1138<br />life_expectancy: 62.12900<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 50164.9259<br />life_expectancy: 81.35122<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x2","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[11286.2430162457,2258.18314084562,48715.1768553933,44507.6763859172,1140.59920478703,2643.29291416763,9040.56625117172,50950.0343435181,987.409723043923,582.694119127261,52817.441365794],"y":[73.619,68.384,80.7439024390244,82.8426829268293,64.306,67.38,74.493,80.7024390243902,65.264,63.433,81.4512195121951],"text":["GDP: 11286.2430<br />life_expectancy: 73.61900<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  2258.1831<br />life_expectancy: 68.38400<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 48715.1769<br />life_expectancy: 80.74390<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 44507.6764<br />life_expectancy: 82.84268<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1140.5992<br />life_expectancy: 64.30600<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  2643.2929<br />life_expectancy: 67.38000<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  9040.5663<br />life_expectancy: 74.49300<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 50950.0343<br />life_expectancy: 80.70244<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   987.4097<br />life_expectancy: 65.26400<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   582.6941<br />life_expectancy: 63.43300<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 52817.4414<br />life_expectancy: 81.45122<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[11627.8106505917,2411.02893203013,48669.785700893,44538.7261906952,1213.18469310894,3043.86182588884,9372.00753879807,51499.5957887631,992.878139474556,613.54446805679,54020.1233844844],"y":[73.921,68.84,80.7463414634146,82.5912195121951,64.797,67.818,74.683,81.2048780487805,65.562,64.523,81.8024390243903],"text":["GDP: 11627.8107<br />life_expectancy: 73.92100<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  2411.0289<br />life_expectancy: 68.84000<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 48669.7857<br />life_expectancy: 80.74634<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 44538.7262<br />life_expectancy: 82.59122<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1213.1847<br />life_expectancy: 64.79700<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  3043.8618<br />life_expectancy: 67.81800<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  9372.0075<br />life_expectancy: 74.68300<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 51499.5958<br />life_expectancy: 81.20488<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:   992.8781<br />life_expectancy: 65.56200<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   613.5445<br />life_expectancy: 64.52300<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 54020.1234<br />life_expectancy: 81.80244<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x4","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[11745.7759262897,2504.50589111398,48573.3772496171,45276.8743354249,1290.83774819673,3353.09360670119,9743.10479725276,50780.7029655426,1006.07328865598,650.367399919546,53283.6359095402],"y":[74.209,69.263,80.8463414634146,83.0960975609756,65.267,68.217,74.877,81.1048780487805,65.849,65.438,81.7048780487805],"text":["GDP: 11745.7759<br />life_expectancy: 74.20900<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  2504.5059<br />life_expectancy: 69.26300<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 48573.3772<br />life_expectancy: 80.84634<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 45276.8743<br />life_expectancy: 83.09610<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1290.8377<br />life_expectancy: 65.26700<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  3353.0936<br />life_expectancy: 68.21700<br />country == \"United States\": FALSE<br />country: Mongolia","GDP:  9743.1048<br />life_expectancy: 74.87700<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 50780.7030<br />life_expectancy: 81.10488<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:  1006.0733<br />life_expectancy: 65.84900<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   650.3674<br />life_expectancy: 65.43800<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 53283.6359<br />life_expectancy: 81.70488<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[11993.4839848731,2526.43366837513,48971.3696835874,46249.2095886537,1373.81443750225,3669.52401258449,10061.7154366437,50565.3020734196,1028.44108649159,664.567680801277,53408.7904573764],"y":[74.483,69.662,80.9487804878049,83.3319512195122,65.717,68.566,75.072,81.3048780487805,66.117,66.219,81.9560975609756],"text":["GDP: 11993.4840<br />life_expectancy: 74.48300<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  2526.4337<br />life_expectancy: 69.66200<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 48971.3697<br />life_expectancy: 80.94878<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 46249.2096<br />life_expectancy: 83.33195<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1373.8144<br />life_expectancy: 65.71700<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  3669.5240<br />life_expectancy: 68.56600<br />country == \"United States\": FALSE<br />country: Mongolia","GDP: 10061.7154<br />life_expectancy: 75.07200<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 50565.3021<br />life_expectancy: 81.30488<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:  1028.4411<br />life_expectancy: 66.11700<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   664.5677<br />life_expectancy: 66.21900<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 53408.7905<br />life_expectancy: 81.95610<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x2","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[11951.2094463497,2639.60088274338,52774.5011801883,46484.1552668954,1456.46765527935,3880.3513875279,10524.0707387983,51100.8398293484,1054.22797401501,688.212198734896,54334.2846322666],"y":[74.745,70.046,81.3487804878049,83.5878048780488,66.144,68.863,75.268,81.7073170731707,66.36,66.884,82.2536585365854],"text":["GDP: 11951.2094<br />life_expectancy: 74.74500<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  2639.6009<br />life_expectancy: 70.04600<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 52774.5012<br />life_expectancy: 81.34878<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 46484.1553<br />life_expectancy: 83.58780<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1456.4677<br />life_expectancy: 66.14400<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  3880.3514<br />life_expectancy: 68.86300<br />country == \"United States\": FALSE<br />country: Mongolia","GDP: 10524.0707<br />life_expectancy: 75.26800<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 51100.8398<br />life_expectancy: 81.70732<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:  1054.2280<br />life_expectancy: 66.36000<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   688.2122<br />life_expectancy: 66.88400<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 54334.2846<br />life_expectancy: 82.25366<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x3","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[11431.1544808449,2780.81954215874,65432.7344447117,47102.5808781405,1538.85116913062,3895.41336222074,10912.1513483495,51871.5765008603,1081.29436599486,730.431686765009,56139.494890742],"y":[74.994,70.419,81.4536585365854,83.7939024390244,66.546,69.111,75.461,81.509756097561,66.577,67.45,82.2048780487805],"text":["GDP: 11431.1545<br />life_expectancy: 74.99400<br />country == \"United States\": FALSE<br />country: Brazil","GDP:  2780.8195<br />life_expectancy: 70.41900<br />country == \"United States\": FALSE<br />country: Bhutan","GDP: 65432.7344<br />life_expectancy: 81.45366<br />country == \"United States\": FALSE<br />country: Ireland","GDP: 47102.5809<br />life_expectancy: 83.79390<br />country == \"United States\": FALSE<br />country: Japan","GDP:  1538.8512<br />life_expectancy: 66.54600<br />country == \"United States\": FALSE<br />country: Lao PDR","GDP:  3895.4134<br />life_expectancy: 69.11100<br />country == \"United States\": FALSE<br />country: Mongolia","GDP: 10912.1513<br />life_expectancy: 75.46100<br />country == \"United States\": FALSE<br />country: Malaysia","GDP: 51871.5765<br />life_expectancy: 81.50976<br />country == \"United States\": FALSE<br />country: Netherlands","GDP:  1081.2944<br />life_expectancy: 66.57700<br />country == \"United States\": FALSE<br />country: Pakistan","GDP:   730.4317<br />life_expectancy: 67.45000<br />country == \"United States\": FALSE<br />country: Rwanda","GDP: 56139.4949<br />life_expectancy: 82.20488<br />country == \"United States\": FALSE<br />country: Sweden"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[44726.9653978293],"y":[76.6365853658537],"text":"GDP: 44726.9654<br />life_expectancy: 76.63659<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[44728.5974752274],"y":[76.8365853658537],"text":"GDP: 44728.5975<br />life_expectancy: 76.83659<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[45087.3672785317],"y":[76.9365853658537],"text":"GDP: 45087.3673<br />life_expectancy: 76.93659<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[45980.514584919],"y":[77.0365853658537],"text":"GDP: 45980.5146<br />life_expectancy: 77.03659<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[47287.593772018],"y":[77.4878048780488],"text":"GDP: 47287.5938<br />life_expectancy: 77.48780<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[48499.8123762908],"y":[77.4878048780488],"text":"GDP: 48499.8124<br />life_expectancy: 77.48780<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[49405.7672958456],"y":[77.6878048780488],"text":"GDP: 49405.7673<br />life_expectancy: 77.68780<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[49856.2814911902],"y":[77.9878048780488],"text":"GDP: 49856.2815<br />life_expectancy: 77.98780<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[49319.4788649957],"y":[78.0390243902439],"text":"GDP: 49319.4789<br />life_expectancy: 78.03902<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[47648.8132503916],"y":[78.390243902439],"text":"GDP: 47648.8133<br />life_expectancy: 78.39024<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x2","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[48467.5157769259],"y":[78.5414634146342],"text":"GDP: 48467.5158<br />life_expectancy: 78.54146<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[48866.0532770682],"y":[78.6414634146341],"text":"GDP: 48866.0533<br />life_expectancy: 78.64146<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x4","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[49603.2534736283],"y":[78.7414634146342],"text":"GDP: 49603.2535<br />life_expectancy: 78.74146<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[50171.2371330963],"y":[78.7414634146342],"text":"GDP: 50171.2371<br />life_expectancy: 78.74146<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x2","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[51028.8248952647],"y":[78.8414634146341],"text":"GDP: 51028.8249<br />life_expectancy: 78.84146<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x3","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[52116.7388127741],"y":[78.690243902439],"text":"GDP: 52116.7388<br />life_expectancy: 78.69024<br />country == \"United States\":  TRUE<br />country: United States","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":37.9178082191781,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,0.245923026744945],"automargin":true,"type":"linear","autorange":false,"range":[-2924.21045250885,68687.8270588651],"tickmode":"array","ticktext":["0","20000","40000","60000"],"tickvals":[0,20000,40000,60000],"categoryorder":"array","categoryarray":["0","20000","40000","60000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"annotations":[{"text":"GDP","x":0.5,"y":-0.0176940639269406,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis"},{"text":"life_expectancy","x":-0.0126386170906719,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis"},{"text":"2000","x":0.122961513372472,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2001","x":0.375,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2002","x":0.625,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2003","x":0.877038486627528,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2004","x":0.122961513372472,"y":0.735159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2005","x":0.375,"y":0.735159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2006","x":0.625,"y":0.735159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2007","x":0.877038486627528,"y":0.735159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2008","x":0.122961513372472,"y":0.485159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2009","x":0.375,"y":0.485159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2010","x":0.625,"y":0.485159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2011","x":0.877038486627528,"y":0.485159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2012","x":0.122961513372472,"y":0.235159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2013","x":0.375,"y":0.235159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2014","x":0.625,"y":0.235159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"2015","x":0.877038486627528,"y":0.235159817351598,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0.764840182648402,1],"automargin":true,"type":"linear","autorange":false,"range":[46.8917548780488,85.5511475609756],"tickmode":"array","ticktext":["50","60","70","80"],"tickvals":[50,60,70,80],"categoryorder":"array","categoryarray":["50","60","70","80"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0.764840182648402,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0.764840182648402,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0.764840182648402,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0.764840182648402,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0.514840182648402,"y1":0.735159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.735159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0.514840182648402,"y1":0.735159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.735159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0.514840182648402,"y1":0.735159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.735159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0.514840182648402,"y1":0.735159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":0.735159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0.264840182648402,"y1":0.485159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.485159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0.264840182648402,"y1":0.485159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.485159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0.264840182648402,"y1":0.485159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.485159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0.264840182648402,"y1":0.485159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":0.485159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0,"y1":0.235159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.245923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.235159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0,"y1":0.235159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.254076973255055,"x1":0.495923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.235159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0,"y1":0.235159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":0.745923026744945,"y0":0,"y1":23.37899543379,"yanchor":0.235159817351598,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0,"y1":0.235159817351598},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.754076973255055,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":0.235159817351598,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[-2924.21045250885,68687.8270588651],"tickmode":"array","ticktext":["0","20000","40000","60000"],"tickvals":[0,20000,40000,60000],"categoryorder":"array","categoryarray":["0","20000","40000","60000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.254076973255055,0.495923026744945],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[-2924.21045250885,68687.8270588651],"tickmode":"array","ticktext":["0","20000","40000","60000"],"tickvals":[0,20000,40000,60000],"categoryorder":"array","categoryarray":["0","20000","40000","60000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.504076973255055,0.745923026744945],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"xaxis4":{"type":"linear","autorange":false,"range":[-2924.21045250885,68687.8270588651],"tickmode":"array","ticktext":["0","20000","40000","60000"],"tickvals":[0,20000,40000,60000],"categoryorder":"array","categoryarray":["0","20000","40000","60000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.754076973255055,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"yaxis2":{"type":"linear","autorange":false,"range":[46.8917548780488,85.5511475609756],"tickmode":"array","ticktext":["50","60","70","80"],"tickvals":[50,60,70,80],"categoryorder":"array","categoryarray":["50","60","70","80"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.514840182648402,0.735159817351598],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"yaxis3":{"type":"linear","autorange":false,"range":[46.8917548780488,85.5511475609756],"tickmode":"array","ticktext":["50","60","70","80"],"tickvals":[50,60,70,80],"categoryorder":"array","categoryarray":["50","60","70","80"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.264840182648402,0.485159817351598],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"yaxis4":{"type":"linear","autorange":false,"range":[46.8917548780488,85.5511475609756],"tickmode":"array","ticktext":["50","60","70","80"],"tickvals":[50,60,70,80],"categoryorder":"array","categoryarray":["50","60","70","80"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.235159817351598],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"2b1835b1430d":{"x":{},"y":{},"colour":{},"tooltip":{},"type":"scatter"}},"cur_data":"2b1835b1430d","visdat":{"2b1835b1430d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="wbstats" class="section level4">
+<h4><span class="header-section-number">3.2.1.2</span> Wbstats</h4>
+<p>Like <code>WDI</code> package, the <code>wbstats</code> library provide an interface for querying the World Bank API. In this section, we present some examples of using different commands for downloading and manipulating the world bank data.
+<code>wbstats</code> provides a cached version of world bank data called <code>wb_cachelist</code></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">library</span>(wbstats)</a>
+<a class="sourceLine" id="cb46-2" title="2"><span class="kw">str</span>(wb_cachelist, <span class="dt">max.level =</span> <span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## List of 7
+##  $ countries  :&#39;data.frame&#39;: 304 obs. of  18 variables:
+##  $ indicators :&#39;data.frame&#39;: 16978 obs. of  7 variables:
+##  $ sources    :&#39;data.frame&#39;: 43 obs. of  8 variables:
+##  $ datacatalog:&#39;data.frame&#39;: 238 obs. of  29 variables:
+##  $ topics     :&#39;data.frame&#39;: 21 obs. of  3 variables:
+##  $ income     :&#39;data.frame&#39;: 7 obs. of  3 variables:
+##  $ lending    :&#39;data.frame&#39;: 4 obs. of  3 variables:</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="co"># We can use updated data and  last ersions of indicators by saving the list returned from `wbcache`</span></a>
+<a class="sourceLine" id="cb48-2" title="2">new_cache &lt;-<span class="st"> </span><span class="kw">wbcache</span>()</a></code></pre></div>
+<p>We use the command <code>wbsearch</code> for seraching the indicators based on regular expressions and text patterns</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="co"># &#39;poverty&#39; OR &#39;unemployment&#39; OR &#39;employment&#39;</span></a>
+<a class="sourceLine" id="cb49-2" title="2">povemply_vars &lt;-<span class="st"> </span><span class="kw">wbsearch</span>(<span class="dt">pattern =</span> <span class="st">&quot;poverty|unemployment|employment&quot;</span>)</a>
+<a class="sourceLine" id="cb49-3" title="3"><span class="kw">head</span>(povemply_vars)</a></code></pre></div>
+<pre><code>##    indicatorID
+## 35   WP15177.9
+## 36   WP15177.8
+## 37   WP15177.7
+## 38   WP15177.6
+## 39   WP15177.5
+## 40   WP15177.4
+##                                                                                        indicator
+## 35         Received government transfers in the past year, income, richest 60% (% ages 15+) [w2]
+## 36         Received government transfers in the past year, income, poorest 40% (% ages 15+) [w2]
+## 37 Received government transfers in the past year, secondary education or more (% ages 15+) [w2]
+## 38   Received government transfers in the past year, primary education or less (% ages 15+) [w2]
+## 39                Received government transfers in the past year, older adults (% ages 25+) [w2]
+## 40              Received government transfers in the past year, young adults (% ages 15-24) [w2]</code></pre>
+<p>we download the data with <code>wb()</code> command. We can specify a subset of countries</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="co"># Population, total</span></a>
+<a class="sourceLine" id="cb51-2" title="2"><span class="co"># country values: iso3c, iso2c, regionID, adminID, incomeID</span></a>
+<a class="sourceLine" id="cb51-3" title="3">pop_data &lt;-<span class="st"> </span><span class="kw">wb</span>(<span class="dt">country =</span> <span class="kw">c</span>(<span class="st">&quot;ABW&quot;</span>,<span class="st">&quot;AF&quot;</span>, <span class="st">&quot;SSF&quot;</span>, <span class="st">&quot;ECA&quot;</span>, <span class="st">&quot;NOC&quot;</span>),</a>
+<a class="sourceLine" id="cb51-4" title="4">               <span class="dt">indicator =</span> <span class="st">&quot;SP.POP.TOTL&quot;</span>, <span class="dt">startdate =</span> <span class="dv">2000</span>, <span class="dt">enddate =</span> <span class="dv">2018</span>)</a>
+<a class="sourceLine" id="cb51-5" title="5"><span class="kw">head</span>(pop_data)</a></code></pre></div>
+<pre><code>##   iso3c date  value indicatorID         indicator iso2c country
+## 1   ABW 2018 105845 SP.POP.TOTL Population, total    AW   Aruba
+## 2   ABW 2017 105366 SP.POP.TOTL Population, total    AW   Aruba
+## 3   ABW 2016 104872 SP.POP.TOTL Population, total    AW   Aruba
+## 4   ABW 2015 104341 SP.POP.TOTL Population, total    AW   Aruba
+## 5   ABW 2014 103774 SP.POP.TOTL Population, total    AW   Aruba
+## 6   ABW 2013 103159 SP.POP.TOTL Population, total    AW   Aruba</code></pre>
+<p>we can download data with multiple indicators in a long data format or a wide formar by specifying the parameter <code>return_wide = TRUE</code></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1">pop_gdp_wide &lt;-<span class="st"> </span><span class="kw">wb</span>(<span class="dt">country =</span> <span class="kw">c</span>(<span class="st">&quot;US&quot;</span>, <span class="st">&quot;NO&quot;</span>), </a>
+<a class="sourceLine" id="cb53-2" title="2">                   <span class="dt">indicator =</span> <span class="kw">c</span>(<span class="st">&quot;SP.POP.TOTL&quot;</span>, <span class="st">&quot;NY.GDP.MKTP.CD&quot;</span>),</a>
+<a class="sourceLine" id="cb53-3" title="3">                   <span class="dt">startdate =</span> <span class="dv">1971</span>, <span class="dt">enddate =</span> <span class="dv">1971</span>, </a>
+<a class="sourceLine" id="cb53-4" title="4">                   <span class="dt">return_wide =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb53-5" title="5"></a>
+<a class="sourceLine" id="cb53-6" title="6"><span class="kw">head</span>(pop_gdp_wide)</a></code></pre></div>
+<pre><code>##   iso3c date iso2c       country NY.GDP.MKTP.CD SP.POP.TOTL
+## 1   NOR 1971    NO        Norway   1.458311e+10     3903039
+## 2   USA 1971    US United States   1.164850e+12   207661000</code></pre>
+<p>When we don’t know the latest date for indicator availability in specified country, we can use the <code>mrv</code> command that returns the latest available entry.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1">eg_data &lt;-<span class="st"> </span><span class="kw">wb</span>(<span class="dt">country =</span> <span class="kw">c</span>(<span class="st">&quot;US&quot;</span>), <span class="dt">indicator =</span> <span class="st">&#39;EG.ELC.ACCS.ZS&#39;</span>, <span class="dt">mrv =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb55-2" title="2">eg_data</a></code></pre></div>
+<pre><code>##   iso3c date value    indicatorID                               indicator iso2c
+## 1   USA 2018   100 EG.ELC.ACCS.ZS Access to electricity (% of population)    US
+##         country
+## 1 United States</code></pre>
+<p>When we have missed values between actual observations, we can use the command <code>gapfill</code> to fill in these values with last observed ones</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1">eg_data &lt;-<span class="st"> </span><span class="kw">wb</span>(<span class="dt">country =</span> <span class="kw">c</span>(<span class="st">&quot;IN&quot;</span>), <span class="dt">indicator =</span> <span class="st">&#39;EG.ELC.ACCS.ZS&#39;</span>, <span class="dt">mrv =</span> <span class="dv">10</span>, <span class="dt">gapfill =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb57-2" title="2">eg_data</a></code></pre></div>
+<pre><code>##    iso3c date    value    indicatorID                               indicator
+## 1    IND 2019 95.23586 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 2    IND 2018 95.23586 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 3    IND 2017 92.60000 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 4    IND 2016 89.67192 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 5    IND 2015 88.00000 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 6    IND 2014 83.53472 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 7    IND 2013 80.79154 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 8    IND 2012 79.90000 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 9    IND 2011 67.60000 EG.ELC.ACCS.ZS Access to electricity (% of population)
+## 10   IND 2010 76.30000 EG.ELC.ACCS.ZS Access to electricity (% of population)
+##    iso2c country
+## 1     IN   India
+## 2     IN   India
+## 3     IN   India
+## 4     IN   India
+## 5     IN   India
+## 6     IN   India
+## 7     IN   India
+## 8     IN   India
+## 9     IN   India
+## 10    IN   India</code></pre>
+<p>We can use the command <code>POSIXct = TRUE</code> in order to obtain datetime formats that make easier the manipulation and plotting time series data</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">pop_data &lt;-<span class="st"> </span><span class="kw">wb</span>(<span class="dt">country =</span> <span class="kw">c</span>(<span class="st">&quot;US&quot;</span>,<span class="st">&quot;SSF&quot;</span>, <span class="st">&quot;ECA&quot;</span>, <span class="st">&quot;NOC&quot;</span>),</a>
+<a class="sourceLine" id="cb59-2" title="2">               <span class="dt">indicator =</span> <span class="st">&quot;SP.POP.TOTL&quot;</span>, </a>
+<a class="sourceLine" id="cb59-3" title="3">               <span class="dt">startdate =</span> <span class="dv">2000</span>, <span class="dt">enddate =</span> <span class="dv">2018</span>,</a>
+<a class="sourceLine" id="cb59-4" title="4">               <span class="dt">POSIXct =</span> <span class="ot">TRUE</span>, <span class="dt">freq =</span> <span class="st">&quot;M&quot;</span>)</a>
+<a class="sourceLine" id="cb59-5" title="5"><span class="kw">head</span>(pop_data)</a></code></pre></div>
+<pre><code>##   iso3c date     value indicatorID         indicator iso2c
+## 1   ECA 2018 416944914 SP.POP.TOTL Population, total    7E
+## 2   ECA 2017 414916897 SP.POP.TOTL Population, total    7E
+## 3   ECA 2016 412611566 SP.POP.TOTL Population, total    7E
+## 4   ECA 2015 410124886 SP.POP.TOTL Population, total    7E
+## 5   ECA 2014 407578609 SP.POP.TOTL Population, total    7E
+## 6   ECA 2013 405078322 SP.POP.TOTL Population, total    7E
+##                                         country    date_ct granularity
+## 1 Europe &amp; Central Asia (excluding high income) 2018-01-01      annual
+## 2 Europe &amp; Central Asia (excluding high income) 2017-01-01      annual
+## 3 Europe &amp; Central Asia (excluding high income) 2016-01-01      annual
+## 4 Europe &amp; Central Asia (excluding high income) 2015-01-01      annual
+## 5 Europe &amp; Central Asia (excluding high income) 2014-01-01      annual
+## 6 Europe &amp; Central Asia (excluding high income) 2013-01-01      annual</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="kw">ggplot</span>(pop_data, <span class="kw">aes</span>(<span class="dt">x =</span> date_ct, <span class="dt">y =</span> value, <span class="dt">colour =</span> country)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb61-2" title="2"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Total population&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Population&quot;</span>)</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+</div>
+</div>
+<div id="extracting-dbnomics-data" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Extracting DBnomics Data</h3>
+<p>DBnomics is an open-source project with the goal of aggregating the world’s economic data in one location, free of charge to the public. DBnomics covers hundreds of millions of series from international and national institutions (Eurostat, World Bank, IMF, …). We will use in this section the <code>rdbnomics</code> which is an R package providing access to DBnomics data series.</p>
+<p>In order to get dbnomics data we have to specify a serie identifier (ids) defined by three values formatted in this way: <code>provider_code/dataset_code/series/code</code>. We can find these infrmation in the <a href="https://db.nomics.world/">DBnomics</a> and <a href="https://api.db.nomics.world/v22/apidocs">DBnomics API documentation</a>. Here is an example of fetching unemployemet rate dataset (called ZUTN) from the <code>AMECO</code> provider.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="kw">library</span>(rdbnomics)</a>
+<a class="sourceLine" id="cb62-2" title="2"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb62-3" title="3"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb62-4" title="4"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb62-5" title="5"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb62-6" title="6"></a>
+<a class="sourceLine" id="cb62-7" title="7"><span class="co"># get two series of unemployement rate data (europe and danemark) </span></a>
+<a class="sourceLine" id="cb62-8" title="8">df =<span class="st"> </span><span class="kw">rdb</span>(<span class="dt">ids =</span> <span class="kw">c</span>(<span class="st">&#39;AMECO/ZUTN/EA19.1.0.0.0.ZUTN&#39;</span>, <span class="st">&#39;AMECO/ZUTN/DNK.1.0.0.0.ZUTN&#39;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-9" title="9"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(value))</a>
+<a class="sourceLine" id="cb62-10" title="10"><span class="kw">head</span>(df)</a></code></pre></div>
+<pre><code>##   @frequency   Country dataset_code
+## 1     annual Euro area         ZUTN
+## 2     annual Euro area         ZUTN
+## 3     annual Euro area         ZUTN
+## 4     annual Euro area         ZUTN
+## 5     annual Euro area         ZUTN
+## 6     annual Euro area         ZUTN
+##                                                     dataset_name freq Frequency
+## 1 Unemployment rate: total :- Member States: definition EUROSTAT    a  Annually
+## 2 Unemployment rate: total :- Member States: definition EUROSTAT    a  Annually
+## 3 Unemployment rate: total :- Member States: definition EUROSTAT    a  Annually
+## 4 Unemployment rate: total :- Member States: definition EUROSTAT    a  Annually
+## 5 Unemployment rate: total :- Member States: definition EUROSTAT    a  Annually
+## 6 Unemployment rate: total :- Member States: definition EUROSTAT    a  Annually
+##    geo          indexed_at original_period original_value     period
+## 1 ea19 2020-05-07 08:46:14            1997           11.5 1997-01-01
+## 2 ea19 2020-05-07 08:46:14            1998             11 1998-01-01
+## 3 ea19 2020-05-07 08:46:14            1999           10.2 1999-01-01
+## 4 ea19 2020-05-07 08:46:14            2000            9.2 2000-01-01
+## 5 ea19 2020-05-07 08:46:14            2001            8.4 2001-01-01
+## 6 ea19 2020-05-07 08:46:14            2002            8.6 2002-01-01
+##   provider_code       series_code
+## 1         AMECO EA19.1.0.0.0.ZUTN
+## 2         AMECO EA19.1.0.0.0.ZUTN
+## 3         AMECO EA19.1.0.0.0.ZUTN
+## 4         AMECO EA19.1.0.0.0.ZUTN
+## 5         AMECO EA19.1.0.0.0.ZUTN
+## 6         AMECO EA19.1.0.0.0.ZUTN
+##                                                series_name
+## 1 Annually – (Percentage of active population) – Euro area
+## 2 Annually – (Percentage of active population) – Euro area
+## 3 Annually – (Percentage of active population) – Euro area
+## 4 Annually – (Percentage of active population) – Euro area
+## 5 Annually – (Percentage of active population) – Euro area
+## 6 Annually – (Percentage of active population) – Euro area
+##                              unit                              Unit value
+## 1 percentage-of-active-population (Percentage of active population)  11.5
+## 2 percentage-of-active-population (Percentage of active population)  11.0
+## 3 percentage-of-active-population (Percentage of active population)  10.2
+## 4 percentage-of-active-population (Percentage of active population)   9.2
+## 5 percentage-of-active-population (Percentage of active population)   8.4
+## 6 percentage-of-active-population (Percentage of active population)   8.6</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="co"># plot</span></a>
+<a class="sourceLine" id="cb64-2" title="2"><span class="kw">ggplot</span>(df,</a>
+<a class="sourceLine" id="cb64-3" title="3">       <span class="kw">aes</span>(<span class="dt">x =</span> period, <span class="dt">y =</span> value, <span class="dt">color =</span> series_name)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb64-4" title="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb64-5" title="5"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb64-6" title="6"><span class="st">  </span><span class="kw">dbnomics</span>()</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p>There is another way to get time series by using code mask notation. Here is an example of extracting the balance of payement data (BOP) from IMF provider.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="co"># get data of France</span></a>
+<a class="sourceLine" id="cb65-2" title="2">df &lt;-<span class="st"> </span><span class="kw">rdb</span>(<span class="st">&#39;IMF&#39;</span>, <span class="st">&#39;BOP&#39;</span>, <span class="dt">mask =</span> <span class="st">&#39;A.FR.BCA_BP6_EUR&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-3" title="3"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(value))</a>
+<a class="sourceLine" id="cb65-4" title="4"><span class="kw">unique</span>(df<span class="op">$</span>REF_AREA)</a></code></pre></div>
+<pre><code>## [1] &quot;FR&quot;</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="co"># get data of france and spain</span></a>
+<a class="sourceLine" id="cb67-2" title="2">df &lt;-<span class="st"> </span><span class="kw">rdb</span>(<span class="st">&#39;IMF&#39;</span>, <span class="st">&#39;BOP&#39;</span>, <span class="dt">mask =</span> <span class="st">&#39;A.FR+ES.BCA_BP6_EUR&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb67-3" title="3"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(value))</a>
+<a class="sourceLine" id="cb67-4" title="4"><span class="kw">unique</span>(df<span class="op">$</span>REF_AREA)</a></code></pre></div>
+<pre><code>## [1] &quot;ES&quot; &quot;FR&quot;</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="co"># plot</span></a>
+<a class="sourceLine" id="cb69-2" title="2"><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> period, <span class="dt">y =</span> value, <span class="dt">color =</span> series_name)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb69-3" title="3"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb69-4" title="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb69-5" title="5"><span class="st">  </span><span class="kw">dbnomics</span>()</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p>We can extract data using directly the API link provided in <a href="https://db.nomics.world/">DBnomics webstie</a>.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">df &lt;-<span class="st"> </span><span class="kw">rdb</span>(<span class="dt">api_link =</span> <span class="st">&quot;https://api.db.nomics.world/v22/series?observations=1&amp;series_ids=BOE/6008/RPMTDDC,BOE/6231/RPMTBVE&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb70-2" title="2"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(value))</a>
+<a class="sourceLine" id="cb70-3" title="3"></a>
+<a class="sourceLine" id="cb70-4" title="4"><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> period, <span class="dt">y =</span> value, <span class="dt">color =</span> series_name)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb70-5" title="5"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb70-6" title="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb70-7" title="7"><span class="st">  </span><span class="kw">dbnomics</span>()</a></code></pre></div>
+<p><img src="OpenDataBook_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+</div>
+<div id="other-tools" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Other tools</h3>
+<p>We can find a plenty of other tools and libraries enabling the extraction of world scale open data from different sources. <a href="https://cengel.github.io/gearup2016/SULdataAccess.html">This article</a> presents a complete overview of these tools.</p>
+<ul>
+<li><em>tidycensus</em>: Load US Census Boundary and Attribute Data as ‘tidyverse’ and ‘sf’-Ready Data Frames</li>
+<li><em>IMFData</em>: R Interface for International Monetary Fund(IMF) Data API</li>
+<li><em>OECD</em>: Search and Extract Data from the OECD</li>
+<li><em>rWBclimate</em>: R interface for the World Bank climate data</li>
+<li><em>getlandsat</em>: Get Landsat 8 Data from Amazon Public Data Sets</li>
 </ul>
 
+</div>
 </div>
 </div>
             </section>
